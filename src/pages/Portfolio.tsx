@@ -5,6 +5,7 @@ import ThreeScene from "@/components/ThreeScene";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Code, Server, Layers, Globe, ExternalLink, Github, Terminal, Database, Cpu, Zap } from "lucide-react";
+
 const Portfolio = () => {
   // Smooth scrolling for anchor links
   useEffect(() => {
@@ -84,8 +85,7 @@ const Portfolio = () => {
                 <div className="cyber-card p-6">
                   <p className="text-lg text-gray-300 mb-6 font-mono leading-relaxed">
                     <span className="text-cyber-blue">$</span> I'm a Computer Science and Data Science student at Rutgers University with a passion for 
-                    full-stack development and artificial intelligence. I'm driven by a persistent 
-                    problem-solving mindset and am always eager to learn new technologies.
+                    full-stack development and artificial intelligence. I'm driven by a love for problem solving and am always eager to learn new technologies.
                   </p>
                   
                   <p className="text-lg text-gray-300 mb-6 font-mono leading-relaxed">
