@@ -121,16 +121,23 @@ function CircuitLines() {
       points.push(new THREE.Vector3(x, y, z));
     }
     
+    // Create a THREE.BufferGeometry from points
     const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
     const color = Math.random() > 0.7 ? "#00FF41" : "#00AAFF";
-    const lineMaterial = new THREE.LineBasicMaterial({ 
-      color: color, 
-      transparent: true, 
-      opacity: Math.random() * 0.5 + 0.3
-    });
     
+    // Fix: use Line component from React Three Fiber instead of HTML line element
     lines.push(
-      <line key={i} geometry={lineGeometry} material={lineMaterial} />
+      <primitive 
+        key={i} 
+        object={new THREE.Line(
+          lineGeometry,
+          new THREE.LineBasicMaterial({ 
+            color: color, 
+            transparent: true, 
+            opacity: Math.random() * 0.5 + 0.3
+          })
+        )}
+      />
     );
   }
   
