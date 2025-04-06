@@ -175,13 +175,13 @@ const Portfolio = () => {
                   <p className="text-gray-400 text-center text-sm mb-4">
                     Building responsive and interactive web applications
                   </p>
-                  <div className="mt-2 grid grid-cols-3 gap-2">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">React</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Next.js</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">JavaScript</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">TypeScript</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">HTML/CSS</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Responsive</span>
+                  <div className="flex flex-wrap gap-1.5 justify-center">
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">React</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Next.js</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">JavaScript</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">TypeScript</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">HTML/CSS</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Responsive</span>
                   </div>
                 </CardContent>
               </Card>
@@ -196,13 +196,13 @@ const Portfolio = () => {
                   <p className="text-gray-400 text-center text-sm mb-4">
                     Building robust server-side applications and APIs
                   </p>
-                  <div className="mt-2 grid grid-cols-3 gap-2">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Java</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Spring Boot</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Node.js</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">MongoDB</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">SQL</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">REST APIs</span>
+                  <div className="flex flex-wrap gap-1.5 justify-center">
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Java</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Spring Boot</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Node.js</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">MongoDB</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">SQL</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">REST APIs</span>
                   </div>
                 </CardContent>
               </Card>
@@ -217,13 +217,13 @@ const Portfolio = () => {
                   <p className="text-gray-400 text-center text-sm mb-4">
                     Analyzing and interpreting complex data sets
                   </p>
-                  <div className="mt-2 grid grid-cols-3 gap-2">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Python</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">R</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">TensorFlow</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">PyTorch</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Tableau</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">ML</span>
+                  <div className="flex flex-wrap gap-1.5 justify-center">
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Python</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">R</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">TensorFlow</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">PyTorch</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Tableau</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">ML</span>
                   </div>
                 </CardContent>
               </Card>
@@ -238,13 +238,13 @@ const Portfolio = () => {
                   <p className="text-gray-400 text-center text-sm mb-4">
                     Exploring and developing AI solutions
                   </p>
-                  <div className="mt-2 grid grid-cols-3 gap-2">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">HuggingFace</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">LangChain</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Ollama</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Deep Learning</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">RAG</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">NLP</span>
+                  <div className="flex flex-wrap gap-1.5 justify-center">
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">HuggingFace</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">LangChain</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">Ollama</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">Deep Learning</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">RAG</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">NLP</span>
                   </div>
                 </CardContent>
               </Card>
