@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,7 +5,6 @@ import ThreeScene from "@/components/ThreeScene";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Code, Server, Layers, Globe, ExternalLink, Github, Terminal, Database, Cpu, Zap } from "lucide-react";
-
 const Portfolio = () => {
   // Smooth scrolling for anchor links
   useEffect(() => {
@@ -23,13 +21,10 @@ const Portfolio = () => {
         }
       }
     };
-
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-cyber-dark text-white overflow-hidden">
+  return <div className="min-h-screen bg-cyber-dark text-white overflow-hidden">
       <div className="scan-line"></div>
       <ThreeScene />
       <Header />
@@ -46,21 +41,18 @@ const Portfolio = () => {
               ADAMYA SINGH
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto md:mx-0 text-gray-300 font-mono">
-              <span className="text-cyber-blue">&gt;</span> Computer Science & Data Science Student<br/>
+              <span className="text-cyber-blue">&gt;</span> Computer Science & Data Science Student<br />
               <span className="text-cyber-green">&gt;</span> Full-stack Developer & AI Researcher
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4">
-              <Button 
-                className="cyber-button" 
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              >
+              <Button className="cyber-button" onClick={() => document.getElementById('projects')?.scrollIntoView({
+              behavior: 'smooth'
+            })}>
                 [View_Projects]
               </Button>
-              <Button 
-                variant="outline"
-                className="cyber-button"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
+              <Button variant="outline" className="cyber-button" onClick={() => document.getElementById('contact')?.scrollIntoView({
+              behavior: 'smooth'
+            })}>
                 [Contact_Me]
               </Button>
             </div>
@@ -285,18 +277,10 @@ const Portfolio = () => {
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-2xl font-bold cyber-title">LEVELUP</h3>
                     <div className="flex space-x-2">
-                      <a 
-                        href="#" 
-                        className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm"
-                        aria-label="GitHub Repository"
-                      >
+                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
                         <Github size={18} />
                       </a>
-                      <a 
-                        href="#" 
-                        className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm"
-                        aria-label="Live Demo"
-                      >
+                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="Live Demo">
                         <ExternalLink size={18} />
                       </a>
                     </div>
@@ -331,18 +315,10 @@ const Portfolio = () => {
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-2xl font-bold cyber-title">RU-NETWORKING</h3>
                     <div className="flex space-x-2">
-                      <a 
-                        href="#" 
-                        className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm"
-                        aria-label="GitHub Repository"
-                      >
+                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
                         <Github size={18} />
                       </a>
-                      <a 
-                        href="#" 
-                        className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm"
-                        aria-label="Live Demo"
-                      >
+                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="Live Demo">
                         <ExternalLink size={18} />
                       </a>
                     </div>
@@ -377,18 +353,10 @@ const Portfolio = () => {
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-2xl font-bold cyber-title">AI WEB SCRAPER</h3>
                     <div className="flex space-x-2">
-                      <a 
-                        href="#" 
-                        className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm"
-                        aria-label="GitHub Repository"
-                      >
+                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
                         <Github size={18} />
                       </a>
-                      <a 
-                        href="#" 
-                        className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm"
-                        aria-label="Live Demo"
-                      >
+                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="Live Demo">
                         <ExternalLink size={18} />
                       </a>
                     </div>
@@ -545,35 +513,24 @@ const Portfolio = () => {
               </div>
               
               <p className="text-lg text-gray-300 text-center mb-8 font-mono">
-                <span className="text-cyber-blue">&gt;</span> I'm currently open to new opportunities and collaborations.<br/>
+                <span className="text-cyber-blue">&gt;</span> I'm currently open to new opportunities and collaborations.<br />
                 <span className="text-cyber-teal">&gt;</span> Feel free to reach out for projects, questions, or just to connect.
               </p>
               
               <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-                <Button 
-                  className="cyber-button" 
-                  onClick={() => window.location.href = 'mailto:adamya.singh@rutgers.edu'}
-                >
+                <Button className="cyber-button" onClick={() => window.location.href = 'mailto:adamya.singh@rutgers.edu'}>
                   [Email_Me]
                 </Button>
-                <Button 
-                  className="cyber-button"
-                  onClick={() => window.open('https://linkedin.com/in/adamya-singh', '_blank')}
-                >
+                <Button className="cyber-button" onClick={() => window.open('https://linkedin.com/in/adamya-singh', '_blank')}>
                   [LinkedIn]
                 </Button>
-                <Button 
-                  className="cyber-button"
-                  onClick={() => window.open('https://github.com/', '_blank')}
-                >
+                <Button className="cyber-button" onClick={() => window.open('https://github.com/', '_blank')}>
                   [GitHub]
                 </Button>
               </div>
               
               <div className="mt-10 text-center">
-                <p className="text-cyber-green font-mono text-xs animate-pulse">
-                  // Connection established // Awaiting your input...
-                </p>
+                
               </div>
             </div>
           </div>
@@ -581,8 +538,6 @@ const Portfolio = () => {
 
         <Footer />
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Portfolio;
