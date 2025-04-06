@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -52,14 +52,27 @@
   }
 
   body {
-    @apply bg-space-dark text-foreground;
+    @apply bg-cyber-dark text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: 'Inter', sans-serif;
   }
 
   /* Custom gradient text */
   .gradient-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-neon-purple via-neon-blue to-neon-pink;
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue via-cyber-teal to-cyber-blue;
+    text-shadow: 0 0 8px rgba(0, 170, 255, 0.5);
+  }
+
+  /* Cyberpunk title style */
+  .cyber-title {
+    @apply font-mono uppercase tracking-wider text-cyber-blue;
+    text-shadow: 0 0 10px #00AAFF, 0 0 20px #00AAFF;
+  }
+  
+  /* Matrix-style text */
+  .cyber-green-text {
+    @apply font-mono text-cyber-green;
+    text-shadow: 0 0 10px #00FF41, 0 0 20px #00FF41;
   }
 
   /* Custom scrollbar */
@@ -72,11 +85,11 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-space-light/50 rounded-full;
+    @apply bg-cyber-blue/50 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-neon-purple/70;
+    @apply bg-cyber-teal/70;
   }
 
   /* Canvas container */
@@ -94,5 +107,61 @@
     position: relative;
     z-index: 1;
   }
+  
+  /* Cyberpunk card styles */
+  .cyber-card {
+    @apply bg-cyber-dark border border-cyber-blue/30 rounded-md relative overflow-hidden;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.15), inset 0 0 2px rgba(0, 255, 255, 0.5);
+  }
+  
+  .cyber-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-[1px] bg-cyber-blue/50;
+    box-shadow: 0 0 8px rgba(0, 170, 255, 0.8);
+  }
+  
+  .cyber-card::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[1px] bg-cyber-blue/30;
+  }
+  
+  /* Glowing border button */
+  .cyber-button {
+    @apply relative inline-flex items-center justify-center px-6 py-2 font-mono text-sm uppercase tracking-wider text-cyber-blue bg-transparent border border-cyber-blue/50 rounded-sm overflow-hidden transition-all duration-300;
+    box-shadow: 0 0 5px rgba(0, 170, 255, 0.3);
+  }
+  
+  .cyber-button:hover,
+  .cyber-button:focus {
+    @apply text-white;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.8), 0 0 20px rgba(0, 170, 255, 0.4);
+  }
+  
+  .cyber-button::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full bg-cyber-blue/10 opacity-0 transition-opacity duration-300;
+  }
+  
+  .cyber-button:hover::before,
+  .cyber-button:focus::before {
+    @apply opacity-100;
+  }
+  
+  /* Grid background */
+  .cyber-grid {
+    background-image: 
+      linear-gradient(to right, rgba(0, 170, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 170, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Scan line effect */
+  .scan-line {
+    @apply fixed top-0 left-0 w-full h-[2px] bg-cyber-blue/10 z-50 pointer-events-none animate-scan-line;
+  }
+  
+  /* Terminal text effect */
+  .terminal-text {
+    @apply font-mono text-cyber-green animate-flicker;
+  }
 }
-

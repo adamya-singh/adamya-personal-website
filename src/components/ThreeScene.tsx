@@ -4,7 +4,26 @@ import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Stats } from "@react-three/drei";
 
-function Particles({ count = 3000 }) {
+function Grid() {
+  const gridRef = useRef<THREE.GridHelper>(null);
+  
+  useFrame(({ clock }) => {
+    if (gridRef.current) {
+      gridRef.current.position.z = (clock.getElapsedTime() % 1) * 2;
+    }
+  });
+  
+  return (
+    <gridHelper 
+      ref={gridRef}
+      args={[40, 40, '#00AAFF', '#05070E']}
+      position={[0, -2, 0]}
+      rotation={[Math.PI / 2, 0, 0]}
+    />
+  );
+}
+
+function Particles({ count = 800 }) {
   const mesh = useRef<THREE.Points>(null);
   const positions = useRef<Float32Array | null>(null);
   const velocities = useRef<number[]>([]);
@@ -14,18 +33,14 @@ function Particles({ count = 3000 }) {
     positions.current = new Float32Array(count * 3);
     
     for (let i = 0; i < count * 3; i += 3) {
-      // Create a sphere of particles
-      const radius = Math.random() * 4 + 2;
-      const phi = Math.acos(-1 + Math.random() * 2);
-      const theta = Math.random() * Math.PI * 2;
+      // Create scattered particles
+      positions.current[i] = (Math.random() - 0.5) * 20;      // x
+      positions.current[i + 1] = (Math.random() - 0.5) * 20;  // y
+      positions.current[i + 2] = (Math.random() - 0.5) * 20;  // z
       
-      positions.current[i] = radius * Math.sin(phi) * Math.cos(theta);
-      positions.current[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
-      positions.current[i + 2] = radius * Math.cos(phi);
-      
-      velocities.current[i] = (Math.random() - 0.5) * 0.002;
-      velocities.current[i + 1] = (Math.random() - 0.5) * 0.002;
-      velocities.current[i + 2] = (Math.random() - 0.5) * 0.002;
+      velocities.current[i] = (Math.random() - 0.5) * 0.005;
+      velocities.current[i + 1] = (Math.random() - 0.5) * 0.005;
+      velocities.current[i + 2] = (Math.random() - 0.5) * 0.005;
     }
   }, [count]);
 
@@ -39,14 +54,14 @@ function Particles({ count = 3000 }) {
         positions.current[i + 1] += velocities.current[i + 1];
         positions.current[i + 2] += velocities.current[i + 2];
         
-        // Boundary check and reverse direction when hit
-        if (Math.abs(positions.current[i]) > 6) velocities.current[i] *= -1;
-        if (Math.abs(positions.current[i + 1]) > 6) velocities.current[i + 1] *= -1;
-        if (Math.abs(positions.current[i + 2]) > 6) velocities.current[i + 2] *= -1;
+        // Boundary check and wrap around
+        if (Math.abs(positions.current[i]) > 10) positions.current[i] *= -0.95;
+        if (Math.abs(positions.current[i + 1]) > 10) positions.current[i + 1] *= -0.95;
+        if (Math.abs(positions.current[i + 2]) > 10) positions.current[i + 2] *= -0.95;
       }
       
       mesh.current.geometry.attributes.position.needsUpdate = true;
-      mesh.current.rotation.y = time.current * 0.03;
+      mesh.current.rotation.y = time.current * 0.01;
     }
   });
 
@@ -62,61 +77,64 @@ function Particles({ count = 3000 }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.03}
-        color="#8B5CF6"
+        color="#00AAFF"
         transparent
-        opacity={0.6}
+        opacity={0.7}
         blending={THREE.AdditiveBlending}
       />
     </points>
   );
 }
 
-function RotatingWireframeObjects() {
-  const group = useRef<THREE.Group>(null);
+function CircuitLines() {
+  const linesRef = useRef<THREE.Group>(null);
   
   useFrame(({ clock }) => {
-    if (group.current) {
-      group.current.rotation.y = Math.sin(clock.getElapsedTime() * 0.2) * 0.3;
-      group.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.1) * 0.2;
+    if (linesRef.current) {
+      linesRef.current.rotation.y = clock.getElapsedTime() * 0.05;
     }
   });
-
-  return (
-    <group ref={group}>
-      {/* Icosahedron */}
-      <mesh position={[0, 0, 0]} scale={0.5}>
-        <icosahedronGeometry args={[1, 1]} />
-        <meshBasicMaterial 
-          color="#3B82F6" 
-          wireframe 
-          transparent
-          opacity={0.7}
-        />
-      </mesh>
+  
+  // Create circuit-like lines
+  const lines = [];
+  const count = 20;
+  
+  for (let i = 0; i < count; i++) {
+    const points: THREE.Vector3[] = [];
+    const segments = Math.floor(Math.random() * 5) + 3;
+    let x = (Math.random() - 0.5) * 10;
+    let y = (Math.random() - 0.5) * 10;
+    let z = (Math.random() - 0.5) * 10;
+    
+    // Create path with right-angle segments (circuit-like)
+    points.push(new THREE.Vector3(x, y, z));
+    
+    for (let j = 0; j < segments; j++) {
+      // Decide which direction to move (x, y, or z)
+      const direction = Math.floor(Math.random() * 3);
+      const distance = (Math.random() * 2 + 0.5) * (Math.random() > 0.5 ? 1 : -1);
       
-      {/* Octahedron */}
-      <mesh position={[1.5, -0.5, 0.5]} scale={0.4} rotation={[0, Math.PI/4, 0]}>
-        <octahedronGeometry args={[1, 0]} />
-        <meshBasicMaterial 
-          color="#EC4899" 
-          wireframe 
-          transparent
-          opacity={0.7}
-        />
-      </mesh>
+      if (direction === 0) x += distance;
+      else if (direction === 1) y += distance;
+      else z += distance;
       
-      {/* Tetrahedron */}
-      <mesh position={[-1.5, 0.5, -0.5]} scale={0.4} rotation={[Math.PI/6, 0, Math.PI/4]}>
-        <tetrahedronGeometry args={[1, 0]} />
-        <meshBasicMaterial 
-          color="#10B981" 
-          wireframe 
-          transparent
-          opacity={0.7}
-        />
-      </mesh>
-    </group>
-  );
+      points.push(new THREE.Vector3(x, y, z));
+    }
+    
+    const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
+    const color = Math.random() > 0.7 ? "#00FF41" : "#00AAFF";
+    const lineMaterial = new THREE.LineBasicMaterial({ 
+      color: color, 
+      transparent: true, 
+      opacity: Math.random() * 0.5 + 0.3
+    });
+    
+    lines.push(
+      <line key={i} geometry={lineGeometry} material={lineMaterial} />
+    );
+  }
+  
+  return <group ref={linesRef}>{lines}</group>;
 }
 
 interface ThreeSceneProps {
@@ -127,18 +145,20 @@ const ThreeScene = ({ showStats = false }: ThreeSceneProps) => {
   return (
     <div className="canvas-container">
       <Canvas>
-        <PerspectiveCamera makeDefault position={[0, 0, 8]} />
-        <ambientLight intensity={0.2} />
-        <pointLight position={[10, 10, 10]} />
+        <PerspectiveCamera makeDefault position={[0, 0, 10]} />
+        <ambientLight intensity={0.1} />
+        <pointLight position={[10, 10, 10]} color="#00AAFF" intensity={0.5} />
+        <pointLight position={[-10, -10, -10]} color="#00FF41" intensity={0.2} />
         
-        <RotatingWireframeObjects />
+        <CircuitLines />
         <Particles />
+        <Grid />
         
         <OrbitControls 
           enablePan={false} 
           enableZoom={false}
           autoRotate 
-          autoRotateSpeed={0.3} 
+          autoRotateSpeed={0.1} 
           minPolarAngle={Math.PI / 2 - 0.5}
           maxPolarAngle={Math.PI / 2 + 0.5}
           enableRotate={false}

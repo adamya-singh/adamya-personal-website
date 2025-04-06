@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Terminal, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -29,73 +29,75 @@ const Header = () => {
   ];
   
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${
-        scrolled ? 'bg-space-dark/90 backdrop-blur-md py-2 shadow-lg' : 'bg-transparent py-4'
-      }`}
-    >
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/portfolio" className="text-xl font-bold gradient-text">
-          AS
-        </Link>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          {navItems.map((item) => (
-            <a 
-              key={item.name}
-              href={item.href}
-              className="text-gray-300 hover:text-white transition-colors relative group text-sm"
+    <>
+      <div className="scan-line"></div>
+      <header 
+        className={`fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${
+          scrolled ? 'bg-cyber-dark/90 backdrop-blur-md py-2 shadow-neon-blue' : 'bg-transparent py-4'
+        }`}
+      >
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          {/* Logo */}
+          <Link to="/portfolio" className="flex items-center space-x-2">
+            <Terminal className="text-cyber-blue" size={20} />
+            <span className="text-xl font-bold cyber-title tracking-wider">AS</span>
+          </Link>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-6">
+            {navItems.map((item) => (
+              <a 
+                key={item.name}
+                href={item.href}
+                className="text-gray-300 hover:text-cyber-blue transition-colors relative group text-sm font-mono uppercase tracking-wider"
+              >
+                {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-cyber-blue transition-all duration-300 group-hover:w-full shadow-neon-blue"></span>
+              </a>
+            ))}
+            <Button 
+              className="cyber-button"
+              onClick={() => window.open('/resume.pdf', '_blank')}
             >
-              {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-purple transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
+              [Resume]
+            </Button>
+          </nav>
+          
+          {/* Mobile Menu Button */}
           <Button 
-            variant="outline" 
-            size="sm"
-            className="border-neon-purple text-neon-purple hover:bg-neon-purple/20"
-            onClick={() => window.open('/resume.pdf', '_blank')}
+            variant="ghost" 
+            className="md:hidden text-cyber-blue hover:text-cyber-teal" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            size="icon"
           >
-            Resume
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </Button>
-        </nav>
+        </div>
         
-        {/* Mobile Menu Button */}
-        <Button 
-          variant="ghost" 
-          className="md:hidden" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          size="icon"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </Button>
-      </div>
-      
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <nav className="md:hidden px-4 py-4 bg-space flex flex-col space-y-4 animate-fade-in">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-gray-300 hover:text-white py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <nav className="md:hidden px-4 py-4 bg-cyber-dark/95 backdrop-blur-lg border-t border-cyber-blue/20 flex flex-col space-y-4 animate-fade-in">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-gray-300 hover:text-cyber-blue py-2 transition-colors font-mono uppercase tracking-wider text-sm flex items-center space-x-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Code size={14} className="text-cyber-blue" />
+                <span>[{item.name}]</span>
+              </a>
+            ))}
+            <Button 
+              className="cyber-button w-full mt-2"
+              onClick={() => window.open('/resume.pdf', '_blank')}
             >
-              {item.name}
-            </a>
-          ))}
-          <Button 
-            variant="outline" 
-            className="border-neon-purple text-neon-purple hover:bg-neon-purple/20 w-full"
-            onClick={() => window.open('/resume.pdf', '_blank')}
-          >
-            Resume
-          </Button>
-        </nav>
-      )}
-    </header>
+              [Resume]
+            </Button>
+          </nav>
+        )}
+      </header>
+    </>
   );
 };
 

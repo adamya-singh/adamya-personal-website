@@ -1,15 +1,18 @@
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Terminal, Code } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-space-dark border-t border-space-light/20 py-8">
+    <footer className="bg-cyber-dark border-t border-cyber-blue/20 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Brand */}
           <div className="mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold gradient-text">Adamya Singh</h2>
-            <p className="text-gray-400 mt-2">
+            <div className="flex items-center space-x-2">
+              <Terminal className="text-cyber-blue" size={18} />
+              <h2 className="cyber-title text-xl">Adamya Singh</h2>
+            </div>
+            <p className="text-gray-400 mt-2 font-mono text-xs">
               Computer Science & Data Science @ Rutgers University
             </p>
           </div>
@@ -20,32 +23,33 @@ const Footer = () => {
               href="https://github.com/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-neon-purple transition-colors p-2"
+              className="text-gray-400 hover:text-cyber-blue transition-colors p-2 border border-gray-800 hover:border-cyber-blue/50 rounded-sm"
               aria-label="GitHub"
             >
-              <Github size={20} />
+              <Github size={18} />
             </a>
             <a 
               href="https://linkedin.com/in/adamya-singh" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-neon-blue transition-colors p-2"
+              className="text-gray-400 hover:text-cyber-teal transition-colors p-2 border border-gray-800 hover:border-cyber-teal/50 rounded-sm"
               aria-label="LinkedIn"
             >
-              <Linkedin size={20} />
+              <Linkedin size={18} />
             </a>
             <a 
               href="mailto:adamya.singh@rutgers.edu" 
-              className="text-gray-400 hover:text-neon-pink transition-colors p-2"
+              className="text-gray-400 hover:text-cyber-green transition-colors p-2 border border-gray-800 hover:border-cyber-green/50 rounded-sm"
               aria-label="Email"
             >
-              <Mail size={20} />
+              <Mail size={18} />
             </a>
           </div>
         </div>
         
         <div className="mt-8 border-t border-gray-800 pt-6 text-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-xs font-mono">
+            <span className="text-cyber-blue">// </span>
             © {new Date().getFullYear()} Adamya Singh. All rights reserved.
           </p>
         </div>

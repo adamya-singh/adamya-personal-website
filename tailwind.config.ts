@@ -63,22 +63,30 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom theme colors
+				// Custom theme colors - updated for cyberpunk theme
 				space: {
-					dark: '#0B1120',
-					DEFAULT: '#1A2036',
-					light: '#2C3248'
+					dark: '#05070E',
+					DEFAULT: '#0B1120',
+					light: '#162036'
 				},
 				neon: {
-					purple: '#8B5CF6',
-					blue: '#3B82F6',
-					pink: '#EC4899',
-					green: '#10B981'
+					purple: '#A97FFF',
+					blue: '#00FFFF',  // Bright cyan
+					pink: '#FF00FF',  // Magenta
+					green: '#00FF41'  // Matrix green
+				},
+				cyber: {
+					blue: '#00AAFF',
+					teal: '#00FFFF',
+					green: '#00FF41',
+					dark: '#05070E',
+					grid: 'rgba(0, 170, 255, 0.2)'
 				}
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
-				mono: ['Roboto Mono', 'monospace']
+				mono: ['Roboto Mono', 'monospace'],
+				cyber: ['Roboto Mono', 'monospace'] // Cyberpunk-style font
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -124,10 +132,32 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						textShadow: '0 0 5px #8B5CF6, 0 0 15px #8B5CF6'
+						textShadow: '0 0 5px #00AAFF, 0 0 15px #00AAFF'
 					},
 					'50%': {
-						textShadow: '0 0 8px #3B82F6, 0 0 20px #3B82F6'
+						textShadow: '0 0 8px #00FFFF, 0 0 20px #00FFFF'
+					}
+				},
+				'scan-line': {
+					'0%': {
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						transform: 'translateY(100vh)'
+					}
+				},
+				'flicker': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'92%': {
+						opacity: '0.95'
+					},
+					'94%': {
+						opacity: '0.85'
+					},
+					'96%': {
+						opacity: '0.9'
 					}
 				}
 			},
@@ -136,7 +166,14 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'fade-out': 'fade-out 0.5s ease-out',
-				'glow': 'glow 3s ease-in-out infinite'
+				'glow': 'glow 3s ease-in-out infinite',
+				'scan-line': 'scan-line 8s linear infinite',
+				'flicker': 'flicker 5s linear infinite'
+			},
+			boxShadow: {
+				'neon-blue': '0 0 5px theme("colors.cyber.blue"), 0 0 20px theme("colors.cyber.blue")',
+				'neon-green': '0 0 5px theme("colors.cyber.green"), 0 0 20px theme("colors.cyber.green")',
+				'neon-glow': '0 0 10px rgba(0, 170, 255, 0.5), 0 0 20px rgba(0, 170, 255, 0.3), inset 0 0 15px rgba(0, 255, 255, 0.5)'
 			}
 		}
 	},
