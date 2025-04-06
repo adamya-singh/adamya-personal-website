@@ -16,7 +16,7 @@ const Portfolio = () => {
         const element = document.querySelector(target.hash);
         if (element) {
           window.scrollTo({
-            top: element.getBoundingClientRect().top + window.scrollY - 100,
+            top: element.getBoundingClientRect().top + window.scrollY - 80,
             behavior: 'smooth'
           });
         }
@@ -25,20 +25,21 @@ const Portfolio = () => {
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
+
   return <div className="min-h-screen bg-cyber-dark text-white overflow-hidden">
-      <div className="scan-line"></div>
+      <div className="scan-line opacity-30"></div>
       <ThreeScene />
       <Header />
       
       <div className="content-container">
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center px-4 cyber-grid">
+        <section className="min-h-screen flex items-center justify-center px-4">
           <div className="container mx-auto text-center md:text-left">
-            <div className="inline-block mb-4 border border-cyber-blue/50 px-3 py-1 text-xs font-mono text-cyber-blue">
+            <div className="inline-block mb-4 border border-cyber-blue/30 px-3 py-1 text-xs font-mono text-cyber-blue">
               <span className="mr-1">$</span>
               <span className="typing-animation">user.identify</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 cyber-title">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 cyber-title tracking-tight">
               ADAMYA SINGH
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto md:mx-0 text-gray-300 font-mono">
@@ -47,42 +48,34 @@ const Portfolio = () => {
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4">
               <Button className="cyber-button" onClick={() => document.getElementById('projects')?.scrollIntoView({
-              behavior: 'smooth'
-            })}>
+                behavior: 'smooth'
+              })}>
                 [View_Projects]
               </Button>
               <Button variant="outline" className="cyber-button" onClick={() => document.getElementById('contact')?.scrollIntoView({
-              behavior: 'smooth'
-            })}>
+                behavior: 'smooth'
+              })}>
                 [Contact_Me]
               </Button>
-            </div>
-            
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-              <a href="#about" className="text-cyber-blue hover:text-cyber-teal transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 5v14M19 12l-7 7-7-7" />
-                </svg>
-              </a>
             </div>
           </div>
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 px-4">
+        <section id="about" className="py-20 px-4">
           <div className="container mx-auto">
             <div className="flex items-center justify-center mb-12">
-              <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[100px]"></div>
-              <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title">
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
+              <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title tracking-tight">
                 ABOUT ME
               </h2>
-              <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[100px]"></div>
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
             </div>
             
             <div className="flex flex-col md:flex-row gap-12">
               {/* Left column - Text */}
               <div className="md:w-2/3">
-                <div className="cyber-card p-6">
+                <div className="cyber-card p-6 bg-cyber-dark/50">
                   <p className="text-lg text-gray-300 mb-6 font-mono leading-relaxed">
                     <span className="text-cyber-blue">$</span> I'm a Computer Science and Data Science student at Rutgers University with a passion for 
                     full-stack development and artificial intelligence. I'm driven by a love for problem solving and am always eager to learn new technologies.
@@ -105,10 +98,10 @@ const Portfolio = () => {
               
               {/* Right column - Skills */}
               <div className="md:w-1/3">
-                <div className="cyber-card p-6">
+                <div className="cyber-card p-6 bg-cyber-dark/50">
                   <div className="flex items-center space-x-2 mb-4">
                     <Terminal className="text-cyber-blue" size={18} />
-                    <h3 className="text-xl font-bold cyber-title">
+                    <h3 className="text-xl font-bold cyber-title tracking-tight">
                       TECH STACK
                     </h3>
                   </div>
@@ -154,24 +147,24 @@ const Portfolio = () => {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-16 px-4 bg-cyber-dark/80 cyber-grid">
+        <section id="skills" className="py-20 px-4 bg-cyber-dark/80">
           <div className="container mx-auto">
             <div className="flex items-center justify-center mb-12">
-              <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[100px]"></div>
-              <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title">
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
+              <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title tracking-tight">
                 SKILLSET
               </h2>
-              <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[100px]"></div>
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Frontend Development */}
-              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300">
+              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300 bg-cyber-dark/50">
                 <CardContent className="pt-6">
                   <div className="w-16 h-16 bg-cyber-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto border border-cyber-blue/30">
                     <Code className="h-8 w-8 text-cyber-blue" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue">FRONTEND</h3>
+                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue tracking-tight">FRONTEND</h3>
                   <p className="text-gray-400 text-center text-sm mb-4">
                     Building responsive and interactive web applications
                   </p>
@@ -187,12 +180,12 @@ const Portfolio = () => {
               </Card>
               
               {/* Backend Development */}
-              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300">
+              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300 bg-cyber-dark/50">
                 <CardContent className="pt-6">
                   <div className="w-16 h-16 bg-cyber-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto border border-cyber-blue/30">
                     <Server className="h-8 w-8 text-cyber-blue" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue">BACKEND</h3>
+                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue tracking-tight">BACKEND</h3>
                   <p className="text-gray-400 text-center text-sm mb-4">
                     Building robust server-side applications and APIs
                   </p>
@@ -208,12 +201,12 @@ const Portfolio = () => {
               </Card>
               
               {/* Data Science */}
-              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300">
+              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300 bg-cyber-dark/50">
                 <CardContent className="pt-6">
                   <div className="w-16 h-16 bg-cyber-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto border border-cyber-blue/30">
                     <Database className="h-8 w-8 text-cyber-blue" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue">DATA SCIENCE</h3>
+                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue tracking-tight">DATA SCIENCE</h3>
                   <p className="text-gray-400 text-center text-sm mb-4">
                     Analyzing and interpreting complex data sets
                   </p>
@@ -229,12 +222,12 @@ const Portfolio = () => {
               </Card>
               
               {/* AI Research */}
-              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300">
+              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300 bg-cyber-dark/50">
                 <CardContent className="pt-6">
                   <div className="w-16 h-16 bg-cyber-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto border border-cyber-blue/30">
                     <Cpu className="h-8 w-8 text-cyber-blue" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue">AI RESEARCH</h3>
+                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue tracking-tight">AI RESEARCH</h3>
                   <p className="text-gray-400 text-center text-sm mb-4">
                     Exploring and developing AI solutions
                   </p>
@@ -253,21 +246,21 @@ const Portfolio = () => {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-16 px-4">
+        <section id="projects" className="py-20 px-4">
           <div className="container mx-auto">
             <div className="flex items-center justify-center mb-12">
-              <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[100px]"></div>
-              <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title">
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
+              <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title tracking-tight">
                 PROJECTS
               </h2>
-              <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[100px]"></div>
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
             </div>
             
             {/* Project 1 - LevelUp */}
             <div className="mb-20">
-              <div className="cyber-card overflow-hidden flex flex-col md:flex-row">
+              <div className="cyber-card overflow-hidden flex flex-col md:flex-row bg-cyber-dark/50">
                 <div className="md:w-1/2 h-64 md:h-auto bg-cyber-blue/10 flex items-center justify-center relative overflow-hidden">
-                  <div className="cyber-grid absolute inset-0 opacity-30"></div>
+                  <div className="cyber-grid absolute inset-0 opacity-20"></div>
                   <div className="text-6xl text-cyber-blue relative z-10">
                     <Layers />
                   </div>
@@ -275,7 +268,7 @@ const Portfolio = () => {
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-2xl font-bold cyber-title">LEVELUP</h3>
+                    <h3 className="text-2xl font-bold cyber-title tracking-tight">LEVELUP</h3>
                     <div className="flex space-x-2">
                       <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
                         <Github size={18} />
@@ -303,9 +296,9 @@ const Portfolio = () => {
             
             {/* Project 2 - RU-Networking */}
             <div className="mb-20">
-              <div className="cyber-card overflow-hidden flex flex-col md:flex-row-reverse">
+              <div className="cyber-card overflow-hidden flex flex-col md:flex-row-reverse bg-cyber-dark/50">
                 <div className="md:w-1/2 h-64 md:h-auto bg-cyber-blue/10 flex items-center justify-center relative overflow-hidden">
-                  <div className="cyber-grid absolute inset-0 opacity-30"></div>
+                  <div className="cyber-grid absolute inset-0 opacity-20"></div>
                   <div className="text-6xl text-cyber-blue relative z-10">
                     <Globe />
                   </div>
@@ -313,7 +306,7 @@ const Portfolio = () => {
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-2xl font-bold cyber-title">RU-NETWORKING</h3>
+                    <h3 className="text-2xl font-bold cyber-title tracking-tight">RU-NETWORKING</h3>
                     <div className="flex space-x-2">
                       <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
                         <Github size={18} />
@@ -341,9 +334,9 @@ const Portfolio = () => {
             
             {/* Project 3 - AI Web Scraper */}
             <div>
-              <div className="cyber-card overflow-hidden flex flex-col md:flex-row">
+              <div className="cyber-card overflow-hidden flex flex-col md:flex-row bg-cyber-dark/50">
                 <div className="md:w-1/2 h-64 md:h-auto bg-cyber-blue/10 flex items-center justify-center relative overflow-hidden">
-                  <div className="cyber-grid absolute inset-0 opacity-30"></div>
+                  <div className="cyber-grid absolute inset-0 opacity-20"></div>
                   <div className="text-6xl text-cyber-blue relative z-10">
                     <Code />
                   </div>
@@ -351,7 +344,7 @@ const Portfolio = () => {
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-2xl font-bold cyber-title">AI WEB SCRAPER</h3>
+                    <h3 className="text-2xl font-bold cyber-title tracking-tight">AI WEB SCRAPER</h3>
                     <div className="flex space-x-2">
                       <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
                         <Github size={18} />
@@ -379,22 +372,22 @@ const Portfolio = () => {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-16 px-4 bg-cyber-dark/80 cyber-grid">
+        <section id="experience" className="py-20 px-4 bg-cyber-dark/80">
           <div className="container mx-auto">
             <div className="flex items-center justify-center mb-12">
-              <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[100px]"></div>
-              <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title">
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
+              <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title tracking-tight">
                 EXPERIENCE
               </h2>
-              <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[100px]"></div>
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
             </div>
             
             <div className="max-w-3xl mx-auto">
               {/* Job 1 */}
               <div className="mb-12 border-l-2 border-cyber-blue pl-8 relative">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyber-blue"></div>
-                <div className="mb-2 cyber-card p-4">
-                  <h3 className="text-xl font-bold cyber-title">UNDERGRADUATE RESEARCH ASSISTANT</h3>
+                <div className="mb-2 cyber-card p-4 bg-cyber-dark/50">
+                  <h3 className="text-xl font-bold cyber-title tracking-tight">UNDERGRADUATE RESEARCH ASSISTANT</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
                     <span>Professor Ruxiang Tang, Rutgers University</span>
                     <span className="hidden sm:block text-cyber-blue">//</span>
@@ -410,8 +403,8 @@ const Portfolio = () => {
               {/* Job 2 */}
               <div className="mb-12 border-l-2 border-cyber-teal pl-8 relative">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyber-teal"></div>
-                <div className="mb-2 cyber-card p-4">
-                  <h3 className="text-xl font-bold cyber-title">SENIOR INSTRUCTOR</h3>
+                <div className="mb-2 cyber-card p-4 bg-cyber-dark/50">
+                  <h3 className="text-xl font-bold cyber-title tracking-tight">SENIOR INSTRUCTOR</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
                     <span>Code Ninjas</span>
                     <span className="hidden sm:block text-cyber-blue">//</span>
@@ -427,8 +420,8 @@ const Portfolio = () => {
               {/* Job 3 */}
               <div className="border-l-2 border-cyber-green pl-8 relative">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyber-green"></div>
-                <div className="mb-2 cyber-card p-4">
-                  <h3 className="text-xl font-bold cyber-title">STEM INSTRUCTOR</h3>
+                <div className="mb-2 cyber-card p-4 bg-cyber-dark/50">
+                  <h3 className="text-xl font-bold cyber-title tracking-tight">STEM INSTRUCTOR</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
                     <span>Empow Studios</span>
                     <span className="hidden sm:block text-cyber-blue">//</span>
@@ -444,19 +437,19 @@ const Portfolio = () => {
         </section>
 
         {/* Education Section */}
-        <section id="education" className="py-16 px-4">
+        <section id="education" className="py-20 px-4">
           <div className="container mx-auto">
             <div className="flex items-center justify-center mb-12">
-              <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[100px]"></div>
-              <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title">
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
+              <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title tracking-tight">
                 EDUCATION
               </h2>
-              <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[100px]"></div>
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
             </div>
             
-            <div className="max-w-3xl mx-auto cyber-card p-8">
+            <div className="max-w-3xl mx-auto cyber-card p-8 bg-cyber-dark/50">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                <h3 className="text-2xl font-bold cyber-title flex items-center">
+                <h3 className="text-2xl font-bold cyber-title tracking-tight flex items-center">
                   <Terminal className="mr-2 text-cyber-blue" size={18} />
                   RUTGERS UNIVERSITY
                 </h3>
@@ -501,15 +494,15 @@ const Portfolio = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 px-4 bg-cyber-dark/80 cyber-grid">
+        <section id="contact" className="py-20 px-4 bg-cyber-dark/80">
           <div className="container mx-auto">
-            <div className="max-w-3xl mx-auto cyber-card p-8">
+            <div className="max-w-3xl mx-auto cyber-card p-8 bg-cyber-dark/50">
               <div className="flex items-center justify-center mb-6">
-                <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[50px]"></div>
-                <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title">
+                <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[50px]"></div>
+                <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title tracking-tight">
                   CONTACT
                 </h2>
-                <div className="h-[1px] flex-1 bg-cyber-blue/30 max-w-[50px]"></div>
+                <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[50px]"></div>
               </div>
               
               <p className="text-lg text-gray-300 text-center mb-8 font-mono">
@@ -521,16 +514,12 @@ const Portfolio = () => {
                 <Button className="cyber-button" onClick={() => window.location.href = 'mailto:adamya.singh@rutgers.edu'}>
                   [Email_Me]
                 </Button>
-                <Button className="cyber-button" onClick={() => window.open('https://linkedin.com/in/adamya-singh', '_blank')}>
+                <Button className="cyber-button" onClick={() => window.open('https://www.linkedin.com/in/adamya-singh-0a8746184/', '_blank')}>
                   [LinkedIn]
                 </Button>
                 <Button className="cyber-button" onClick={() => window.open('https://github.com/', '_blank')}>
                   [GitHub]
                 </Button>
-              </div>
-              
-              <div className="mt-10 text-center">
-                
               </div>
             </div>
           </div>
@@ -540,4 +529,5 @@ const Portfolio = () => {
       </div>
     </div>;
 };
+
 export default Portfolio;

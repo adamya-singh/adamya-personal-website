@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Mail, Terminal, Code } from "lucide-react";
 
 const Footer = () => {
@@ -29,7 +28,7 @@ const Footer = () => {
               <Github size={18} />
             </a>
             <a 
-              href="https://linkedin.com/in/adamya-singh" 
+              href="https://www.linkedin.com/in/adamya-singh-0a8746184/" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-cyber-teal transition-colors p-2 border border-gray-800 hover:border-cyber-teal/50 rounded-sm"
