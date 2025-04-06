@@ -65,9 +65,9 @@ export default {
 				},
 				// Custom theme colors
 				space: {
-					dark: '#0F172A',
-					DEFAULT: '#1E293B',
-					light: '#334155'
+					dark: '#0B1120',
+					DEFAULT: '#1A2036',
+					light: '#2C3248'
 				},
 				neon: {
 					purple: '#8B5CF6',
@@ -77,7 +77,7 @@ export default {
 				}
 			},
 			fontFamily: {
-				sans: ['Poppins', 'sans-serif'],
+				sans: ['Inter', 'sans-serif'],
 				mono: ['Roboto Mono', 'monospace']
 			},
 			borderRadius: {
@@ -124,10 +124,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						textShadow: '0 0 5px #8B5CF6, 0 0 15px #8B5CF6, 0 0 20px #8B5CF6'
+						textShadow: '0 0 5px #8B5CF6, 0 0 15px #8B5CF6'
 					},
 					'50%': {
-						textShadow: '0 0 10px #3B82F6, 0 0 20px #3B82F6, 0 0 30px #3B82F6'
+						textShadow: '0 0 8px #3B82F6, 0 0 20px #3B82F6'
 					}
 				}
 			},

@@ -24,6 +24,7 @@ const Header = () => {
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' }
   ];
   
@@ -35,17 +36,17 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/portfolio" className="text-2xl font-bold gradient-text">
-          Adamya
+        <Link to="/portfolio" className="text-xl font-bold gradient-text">
+          AS
         </Link>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => (
             <a 
               key={item.name}
               href={item.href}
-              className="text-gray-300 hover:text-white transition-colors relative group"
+              className="text-gray-300 hover:text-white transition-colors relative group text-sm"
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-purple transition-all duration-300 group-hover:w-full"></span>
@@ -53,7 +54,9 @@ const Header = () => {
           ))}
           <Button 
             variant="outline" 
+            size="sm"
             className="border-neon-purple text-neon-purple hover:bg-neon-purple/20"
+            onClick={() => window.open('/resume.pdf', '_blank')}
           >
             Resume
           </Button>
@@ -86,6 +89,7 @@ const Header = () => {
           <Button 
             variant="outline" 
             className="border-neon-purple text-neon-purple hover:bg-neon-purple/20 w-full"
+            onClick={() => window.open('/resume.pdf', '_blank')}
           >
             Resume
           </Button>

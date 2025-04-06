@@ -1,5 +1,5 @@
 
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,9 +8,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Brand */}
           <div className="mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold gradient-text">Adamya</h2>
+            <h2 className="text-2xl font-bold gradient-text">Adamya Singh</h2>
             <p className="text-gray-400 mt-2">
-              Building digital experiences that matter
+              Computer Science & Data Science @ Rutgers University
             </p>
           </div>
           
@@ -26,16 +26,7 @@ const Footer = () => {
               <Github size={20} />
             </a>
             <a 
-              href="https://twitter.com/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-neon-blue transition-colors p-2"
-              aria-label="Twitter"
-            >
-              <Twitter size={20} />
-            </a>
-            <a 
-              href="https://linkedin.com/" 
+              href="https://linkedin.com/in/adamya-singh" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-neon-blue transition-colors p-2"
@@ -44,7 +35,7 @@ const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a 
-              href="mailto:hello@adamya.xyz" 
+              href="mailto:adamya.singh@rutgers.edu" 
               className="text-gray-400 hover:text-neon-pink transition-colors p-2"
               aria-label="Email"
             >
@@ -55,7 +46,7 @@ const Footer = () => {
         
         <div className="mt-8 border-t border-gray-800 pt-6 text-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Adamya. All rights reserved.
+            © {new Date().getFullYear()} Adamya Singh. All rights reserved.
           </p>
         </div>
       </div>

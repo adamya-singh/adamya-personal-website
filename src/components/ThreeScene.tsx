@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Stats } from "@react-three/drei";
 
-function Particles({ count = 5000 }) {
+function Particles({ count = 3000 }) {
   const mesh = useRef<THREE.Points>(null);
   const positions = useRef<Float32Array | null>(null);
   const velocities = useRef<number[]>([]);
@@ -15,7 +15,7 @@ function Particles({ count = 5000 }) {
     
     for (let i = 0; i < count * 3; i += 3) {
       // Create a sphere of particles
-      const radius = Math.random() * 4 + 1;
+      const radius = Math.random() * 4 + 2;
       const phi = Math.acos(-1 + Math.random() * 2);
       const theta = Math.random() * Math.PI * 2;
       
@@ -23,9 +23,9 @@ function Particles({ count = 5000 }) {
       positions.current[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
       positions.current[i + 2] = radius * Math.cos(phi);
       
-      velocities.current[i] = (Math.random() - 0.5) * 0.005;
-      velocities.current[i + 1] = (Math.random() - 0.5) * 0.005;
-      velocities.current[i + 2] = (Math.random() - 0.5) * 0.005;
+      velocities.current[i] = (Math.random() - 0.5) * 0.002;
+      velocities.current[i + 1] = (Math.random() - 0.5) * 0.002;
+      velocities.current[i + 2] = (Math.random() - 0.5) * 0.002;
     }
   }, [count]);
 
@@ -40,13 +40,13 @@ function Particles({ count = 5000 }) {
         positions.current[i + 2] += velocities.current[i + 2];
         
         // Boundary check and reverse direction when hit
-        if (Math.abs(positions.current[i]) > 5) velocities.current[i] *= -1;
-        if (Math.abs(positions.current[i + 1]) > 5) velocities.current[i + 1] *= -1;
-        if (Math.abs(positions.current[i + 2]) > 5) velocities.current[i + 2] *= -1;
+        if (Math.abs(positions.current[i]) > 6) velocities.current[i] *= -1;
+        if (Math.abs(positions.current[i + 1]) > 6) velocities.current[i + 1] *= -1;
+        if (Math.abs(positions.current[i + 2]) > 6) velocities.current[i + 2] *= -1;
       }
       
       mesh.current.geometry.attributes.position.needsUpdate = true;
-      mesh.current.rotation.y = time.current * 0.05;
+      mesh.current.rotation.y = time.current * 0.03;
     }
   });
 
@@ -61,87 +61,61 @@ function Particles({ count = 5000 }) {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.05}
+        size={0.03}
         color="#8B5CF6"
         transparent
-        opacity={0.8}
+        opacity={0.6}
         blending={THREE.AdditiveBlending}
       />
     </points>
   );
 }
 
-function RotatingBox() {
-  const mesh = useRef<THREE.Mesh>(null);
+function RotatingWireframeObjects() {
+  const group = useRef<THREE.Group>(null);
   
-  useFrame(() => {
-    if (mesh.current) {
-      mesh.current.rotation.x += 0.01;
-      mesh.current.rotation.y += 0.005;
+  useFrame(({ clock }) => {
+    if (group.current) {
+      group.current.rotation.y = Math.sin(clock.getElapsedTime() * 0.2) * 0.3;
+      group.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.1) * 0.2;
     }
   });
 
   return (
-    <mesh ref={mesh} position={[0, 0, 0]}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial 
-        color="#10B981" 
-        wireframe 
-        emissive="#10B981"
-        emissiveIntensity={0.5}
-      />
-    </mesh>
-  );
-}
-
-function FloatingTetrahedron() {
-  const mesh = useRef<THREE.Mesh>(null);
-  const time = useRef(0);
-  
-  useFrame(() => {
-    time.current += 0.01;
-    if (mesh.current) {
-      mesh.current.position.y = Math.sin(time.current) * 0.5;
-      mesh.current.rotation.z += 0.01;
-      mesh.current.rotation.x += 0.005;
-    }
-  });
-
-  return (
-    <mesh ref={mesh} position={[2, 0, -1]}>
-      <tetrahedronGeometry args={[0.8, 0]} />
-      <meshStandardMaterial 
-        color="#EC4899" 
-        wireframe 
-        emissive="#EC4899"
-        emissiveIntensity={0.5}
-      />
-    </mesh>
-  );
-}
-
-function FloatingSphere() {
-  const mesh = useRef<THREE.Mesh>(null);
-  const time = useRef(0);
-  
-  useFrame(() => {
-    time.current += 0.01;
-    if (mesh.current) {
-      mesh.current.position.y = Math.cos(time.current) * 0.5;
-      mesh.current.rotation.y += 0.01;
-    }
-  });
-
-  return (
-    <mesh ref={mesh} position={[-2, 0, 1]}>
-      <sphereGeometry args={[0.7, 16, 16]} />
-      <meshStandardMaterial 
-        color="#3B82F6" 
-        wireframe 
-        emissive="#3B82F6"
-        emissiveIntensity={0.5}
-      />
-    </mesh>
+    <group ref={group}>
+      {/* Icosahedron */}
+      <mesh position={[0, 0, 0]} scale={0.5}>
+        <icosahedronGeometry args={[1, 1]} />
+        <meshBasicMaterial 
+          color="#3B82F6" 
+          wireframe 
+          transparent
+          opacity={0.7}
+        />
+      </mesh>
+      
+      {/* Octahedron */}
+      <mesh position={[1.5, -0.5, 0.5]} scale={0.4} rotation={[0, Math.PI/4, 0]}>
+        <octahedronGeometry args={[1, 0]} />
+        <meshBasicMaterial 
+          color="#EC4899" 
+          wireframe 
+          transparent
+          opacity={0.7}
+        />
+      </mesh>
+      
+      {/* Tetrahedron */}
+      <mesh position={[-1.5, 0.5, -0.5]} scale={0.4} rotation={[Math.PI/6, 0, Math.PI/4]}>
+        <tetrahedronGeometry args={[1, 0]} />
+        <meshBasicMaterial 
+          color="#10B981" 
+          wireframe 
+          transparent
+          opacity={0.7}
+        />
+      </mesh>
+    </group>
   );
 }
 
@@ -155,21 +129,19 @@ const ThreeScene = ({ showStats = false }: ThreeSceneProps) => {
       <Canvas>
         <PerspectiveCamera makeDefault position={[0, 0, 8]} />
         <ambientLight intensity={0.2} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-        <pointLight position={[-10, -10, -10]} />
+        <pointLight position={[10, 10, 10]} />
         
-        <RotatingBox />
-        <FloatingTetrahedron />
-        <FloatingSphere />
+        <RotatingWireframeObjects />
         <Particles />
         
         <OrbitControls 
           enablePan={false} 
           enableZoom={false}
           autoRotate 
-          autoRotateSpeed={0.5} 
+          autoRotateSpeed={0.3} 
           minPolarAngle={Math.PI / 2 - 0.5}
           maxPolarAngle={Math.PI / 2 + 0.5}
+          enableRotate={false}
         />
         {showStats && <Stats />}
       </Canvas>
