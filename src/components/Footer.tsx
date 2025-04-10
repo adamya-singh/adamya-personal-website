@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex space-x-4">
             <a 
-              href="https://github.com/" 
+              href="https://github.com/adamya-singh" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-cyber-blue transition-colors p-2 border border-gray-800 hover:border-cyber-blue/50 rounded-sm"
