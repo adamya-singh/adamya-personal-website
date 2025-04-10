@@ -1,5 +1,7 @@
-import { useEffect } from "react";
+import React from 'react';
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import ThreeScene from "@/components/ThreeScene";
 import Header from "@/components/Header";
@@ -7,7 +9,6 @@ import Footer from "@/components/Footer";
 import { Code, Server, Layers, Globe, ExternalLink, Github, Terminal, Database, Cpu, Zap } from "lucide-react";
 
 const Portfolio = () => {
-  // Smooth scrolling for anchor links
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLAnchorElement;
@@ -25,6 +26,17 @@ const Portfolio = () => {
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
+
+  const handleCopyEmail = () => {
+    const email = 'adamya.singh@rutgers.edu';
+    navigator.clipboard.writeText(email).then(() => {
+      toast.success('Email copied to clipboard!', {
+        description: email,
+      });
+    }).catch((err) => {
+      toast.error('Failed to copy email');
+    });
+  };
 
   return <div className="min-h-screen bg-cyber-dark text-white overflow-hidden">
       <div className="scan-line opacity-30"></div>
@@ -284,11 +296,11 @@ const Portfolio = () => {
                     A modern, full-stack task management application built with React, TypeScript, and Spring Boot. This project demonstrates professional-grade web development practices, including type safety, optimistic UI updates, and responsive design. Features include task creation, real-time performance metrics, and error handling.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">React</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">Spring Boot 3</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">MongoDB</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">Supabase</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">RESTful API</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">React</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Spring Boot 3</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">MongoDB</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Supabase</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">RESTful API</span>
                   </div>
                 </div>
               </div>
@@ -322,11 +334,11 @@ const Portfolio = () => {
                     Reduced average time spent searching for information by over 60%.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">Next.js</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">Ollama</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">OpenAI API</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">PineconeDB</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">RAG</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Next.js</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Ollama</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">OpenAI API</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">PineconeDB</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">RAG</span>
                   </div>
                 </div>
               </div>
@@ -359,11 +371,11 @@ const Portfolio = () => {
                     Built with Selenium, BeautifulSoup, and LangChain to efficiently process and analyze complex web data.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">Python</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">Selenium</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">BeautifulSoup</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">LangChain</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">LLM</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Python</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Selenium</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">BeautifulSoup</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">LangChain</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">LLM</span>
                   </div>
                 </div>
               </div>
@@ -511,9 +523,12 @@ const Portfolio = () => {
               </p>
               
               <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-                <Button className="cyber-button" onClick={() => window.location.href = 'mailto:adamya.singh@rutgers.edu'}>
-                  [Email_Me]
-                </Button>
+                <div 
+                  onClick={handleCopyEmail} 
+                  className="cursor-pointer bg-cyber-dark/70 border border-cyber-blue/30 px-4 py-2 rounded-sm text-center text-gray-300 hover:bg-cyber-blue/10 transition-colors font-mono"
+                >
+                  adamya.singh@rutgers.edu
+                </div>
                 <Button className="cyber-button" onClick={() => window.open('https://www.linkedin.com/in/adamya-singh-0a8746184/', '_blank')}>
                   [LinkedIn]
                 </Button>
