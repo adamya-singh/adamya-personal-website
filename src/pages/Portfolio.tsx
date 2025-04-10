@@ -261,27 +261,27 @@ const Portfolio = () => {
               <div className="cyber-card overflow-hidden flex flex-col md:flex-row bg-cyber-dark/50">
                 <div className="md:w-1/2 h-64 md:h-auto bg-cyber-blue/10 flex items-center justify-center relative overflow-hidden">
                   <div className="cyber-grid absolute inset-0 opacity-20"></div>
-                  <div className="text-6xl text-cyber-blue relative z-10">
-                    <Layers />
-                  </div>
+                  <img 
+                    src="https://raw.githubusercontent.com/adamya-singh/levelup/main/assets/demo.gif" 
+                    alt="LevelUp Demo" 
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute top-4 left-4 font-mono text-xs text-cyber-blue">01</div>
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-2xl font-bold cyber-title tracking-tight">LEVELUP</h3>
                     <div className="flex space-x-2">
-                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
+                      <a href="https://github.com/adamya-singh/levelup" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
                         <Github size={18} />
                       </a>
-                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="Live Demo">
+                      <a href="https://raw.githubusercontent.com/adamya-singh/levelup/main/assets/demo.gif" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="View Demo GIF">
                         <ExternalLink size={18} />
                       </a>
                     </div>
                   </div>
                   <p className="text-gray-400 mb-6 font-mono text-sm leading-relaxed">
-                    A full-stack web application for creating, tracking, and managing tasks with real-time feedback.
-                    Designed and implemented RESTful APIs for CRUD operations and user authentication through Supabase.
-                    Reduced latency by 40% using indexed database queries and client-side caching.
+                    A modern, full-stack task management application built with React, TypeScript, and Spring Boot. This project demonstrates professional-grade web development practices, including type safety, optimistic UI updates, and responsive design. Features include task creation, real-time performance metrics, and error handling.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-xs font-mono">React</span>
