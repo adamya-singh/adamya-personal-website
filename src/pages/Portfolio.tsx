@@ -311,16 +311,18 @@ const Portfolio = () => {
               <div className="cyber-card overflow-hidden flex flex-col md:flex-row-reverse bg-cyber-dark/50">
                 <div className="md:w-1/2 h-64 md:h-auto bg-cyber-blue/10 flex items-center justify-center relative overflow-hidden">
                   <div className="cyber-grid absolute inset-0 opacity-20"></div>
-                  <div className="text-6xl text-cyber-blue relative z-10">
-                    <Globe />
-                  </div>
+                  <img 
+                    src="https://github.com/adamya-singh/ru-networking/raw/master/assets/Verizon%20Challenge%20Demo.gif" 
+                    alt="RU-Networking Demo" 
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute top-4 right-4 font-mono text-xs text-cyber-blue">02</div>
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-2xl font-bold cyber-title tracking-tight">RU-NETWORKING</h3>
                     <div className="flex space-x-2">
-                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
+                      <a href="https://github.com/adamya-singh/ru-networking" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
                         <Github size={18} />
                       </a>
                       <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="Live Demo">
@@ -532,7 +534,7 @@ const Portfolio = () => {
                 <Button className="cyber-button" onClick={() => window.open('https://www.linkedin.com/in/adamya-singh-0a8746184/', '_blank')}>
                   [LinkedIn]
                 </Button>
-                <Button className="cyber-button" onClick={() => window.open('https://github.com/', '_blank')}>
+                <Button className="cyber-button" onClick={() => window.open('https://github.com/adamya-singh', '_blank')}>
                   [GitHub]
                 </Button>
               </div>
