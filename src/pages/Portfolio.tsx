@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import ThreeScene from "@/components/ThreeScene";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Code, Server, Layers, Globe, ExternalLink, Github, Terminal, Database, Cpu, Zap } from "lucide-react";
@@ -38,9 +37,8 @@ const Portfolio = () => {
     });
   };
 
-  return <div className="min-h-screen bg-cyber-dark text-white overflow-hidden">
+  return <div className="min-h-screen bg-cyber-dark/20 text-white overflow-hidden">
       <div className="scan-line opacity-30"></div>
-      <ThreeScene />
       <Header />
       
       <div className="content-container">
