@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Code, Server, Layers, Globe, ExternalLink, Github, Terminal, Database, Cpu, Zap } from "lucide-react";
+import { Code, Server, ExternalLink, Github, Terminal, Database, Cpu, Zap } from "lucide-react";
 
 const Portfolio = () => {
   useEffect(() => {
@@ -34,7 +34,7 @@ const Portfolio = () => {
       toast.success('Email copied to clipboard!', {
         description: email,
       });
-    }).catch((err) => {
+    }).catch(() => {
       toast.error('Failed to copy email');
     });
   };
@@ -89,21 +89,21 @@ const Portfolio = () => {
               <div className="md:w-2/3">
                 <div className="cyber-card p-6 bg-cyber-dark/50">
                   <p className="text-lg text-gray-300 mb-6 font-mono leading-relaxed">
-                    <span className="text-cyber-blue">$</span> I'm a Computer Science and Data Science student at Rutgers University with a passion for 
-                    full-stack development and artificial intelligence. I'm driven by a love for problem solving and am always eager to learn new technologies.
+                    <span className="text-cyber-blue">$</span> I&#39;m a Computer Science and Data Science student at Rutgers University with a passion for 
+                    full-stack development and artificial intelligence. I&#39;m driven by a love for problem solving and am always eager to learn new technologies.
                   </p>
                   
                   <p className="text-lg text-gray-300 mb-6 font-mono leading-relaxed">
-                    <span className="text-cyber-blue">$</span> Currently, I'm working as an Undergraduate Research Assistant under Professor Ruxiang Tang, 
+                    <span className="text-cyber-blue">$</span> Currently, I&#39;m working as an Undergraduate Research Assistant under Professor Ruxiang Tang, 
                     where I develop benchmarks to evaluate model performance on negation-sensitive tasks and 
                     enhance negation comprehension in vision-language models for medical imaging.
                   </p>
                   
                   <p className="text-lg text-gray-300 font-mono leading-relaxed">
-                    <span className="text-cyber-blue">$</span> When I'm not coding or researching, I'm actively involved in the Undergraduate Student 
+                    <span className="text-cyber-blue">$</span> When I&#39;m not coding or researching, I&#39;m actively involved in the Undergraduate Student 
                     Alliance of Computer Scientists at Rutgers, where I serve as a Tech Team and Executive 
-                    Board Member. I'm also proud to have achieved the rank of Eagle Scout and to have been 
-                    recognized on the Dean's list.
+                    Board Member. I&#39;m also proud to have achieved the rank of Eagle Scout and to have been 
+                    recognized on the Dean&#39;s list.
                   </p>
                 </div>
               </div>
@@ -273,6 +273,7 @@ const Portfolio = () => {
               <div className="cyber-card overflow-hidden flex flex-col md:flex-row bg-cyber-dark/50">
                 <div className="md:w-1/2 h-64 md:h-auto bg-cyber-blue/10 flex items-center justify-center relative overflow-hidden">
                   <div className="cyber-grid absolute inset-0 opacity-20"></div>
+                  {/* TODO: Consider replacing <img> with <Image /> from next/image for better performance and optimization. */}
                   <img 
                     src="https://github.com/adamya-singh/ru-networking/raw/master/assets/Verizon%20Challenge%20Demo.gif" 
                     alt="RU-Networking Demo" 
@@ -313,6 +314,7 @@ const Portfolio = () => {
               <div className="cyber-card overflow-hidden flex flex-col md:flex-row-reverse bg-cyber-dark/50">
                 <div className="md:w-1/2 h-64 md:h-auto bg-cyber-blue/10 flex items-center justify-center relative overflow-hidden">
                   <div className="cyber-grid absolute inset-0 opacity-20"></div>
+                  {/* TODO: Consider replacing <img> with <Image /> from next/image for better performance and optimization. */}
                   <img 
                     src="https://raw.githubusercontent.com/adamya-singh/levelup/main/assets/demo.gif" 
                     alt="LevelUp Demo" 
@@ -404,7 +406,7 @@ const Portfolio = () => {
                   <h3 className="text-xl font-bold cyber-title tracking-tight">UNDERGRADUATE RESEARCH ASSISTANT</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
                     <span>Professor Ruxiang Tang, Rutgers University</span>
-                    <span className="hidden sm:block text-cyber-blue">//</span>
+                    <span className="hidden sm:block text-cyber-blue">{/* // */}</span>
                     <span className="text-cyber-green">Jan 2025 - Present</span>
                   </div>
                 </div>
@@ -421,7 +423,7 @@ const Portfolio = () => {
                   <h3 className="text-xl font-bold cyber-title tracking-tight">SENIOR INSTRUCTOR</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
                     <span>Code Ninjas</span>
-                    <span className="hidden sm:block text-cyber-blue">//</span>
+                    <span className="hidden sm:block text-cyber-blue">{/* // */}</span>
                     <span className="text-cyber-green">2022 - 2024</span>
                   </div>
                 </div>
@@ -438,12 +440,12 @@ const Portfolio = () => {
                   <h3 className="text-xl font-bold cyber-title tracking-tight">STEM INSTRUCTOR</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
                     <span>Empow Studios</span>
-                    <span className="hidden sm:block text-cyber-blue">//</span>
+                    <span className="hidden sm:block text-cyber-blue">{/* // */}</span>
                     <span className="text-cyber-green">2019 - 2022</span>
                   </div>
                 </div>
                 <ul className="space-y-3 text-gray-300 list-disc list-outside ml-4 font-mono text-sm">
-                  <li>Planned lessons and activities to facilitate students' acquisition of basic and advanced computer skills</li>
+                  <li>Planned lessons and activities to facilitate students&#39; acquisition of basic and advanced computer skills</li>
                 </ul>
               </div>
             </div>
@@ -499,7 +501,7 @@ const Portfolio = () => {
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-sm font-mono">Eagle Scout</span>
-                  <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-sm font-mono">Dean's List</span>
+                  <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-sm font-mono">Dean&#39;s List</span>
                   <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-3 py-1 text-sm font-mono">Verizon Smart Campus Challenge Winner 2025</span>
                 </div>
               </div>
@@ -520,7 +522,7 @@ const Portfolio = () => {
               </div>
               
               <p className="text-lg text-gray-300 text-center mb-8 font-mono">
-                <span className="text-cyber-blue">&gt;</span> I'm currently open to new opportunities and collaborations.<br />
+                <span className="text-cyber-blue">&gt;</span> I&#39;m currently open to new opportunities and collaborations.<br />
                 <span className="text-cyber-teal">&gt;</span> Feel free to reach out for projects, questions, or just to connect.
               </p>
               
