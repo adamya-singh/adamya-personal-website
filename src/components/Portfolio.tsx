@@ -40,7 +40,6 @@ const Portfolio = () => {
   };
 
   return <div className="min-h-screen bg-cyber-dark/20 text-white overflow-hidden">
-      <div className="scan-line opacity-30"></div>
       <Header />
       
       <div className="content-container">
