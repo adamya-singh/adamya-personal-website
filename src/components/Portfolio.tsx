@@ -508,6 +508,29 @@ const Portfolio = () => {
           </div>
         </section>
 
+        {/* Resume Section */}
+        <section id="resume" className="py-20 px-4 bg-cyber-dark/80">
+          <div className="container mx-auto">
+            <div className="flex items-center justify-center mb-12">
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
+              <h2 className="text-3xl md:text-4xl font-bold mx-4 cyber-title tracking-tight">
+                RESUME
+              </h2>
+              <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
+            </div>
+            
+            <div className="cyber-card p-6 bg-cyber-dark/50">
+              <iframe
+                src="/Adamya_Singh_Resume.pdf"
+                width="100%"
+                height="800px"
+                className="border border-cyber-blue/30 rounded-sm"
+                title="Adamya Singh Resume"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section id="contact" className="py-20 px-4 bg-cyber-dark/80">
           <div className="container mx-auto">
