@@ -279,7 +279,7 @@ const Portfolio = () => {
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <h3 className="text-2xl font-bold cyber-title tracking-tight">RU-NETWORKING</h3>
-                      <span className="text-cyber-green font-mono text-xs">70,000+ Rutgers students</span>
+                      <span className="text-cyber-green font-mono text-xs">AI Course Planning Assistant</span>
                     </div>
                     <div className="flex space-x-2">
                       <a href="https://github.com/adamya-singh/ru-networking" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
