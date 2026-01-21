@@ -306,9 +306,48 @@ const Portfolio = () => {
               </div>
             </div>
             
-            {/* Project 2 - AtomicCoach */}
+            {/* Project 2 - SO-ARM-101 MuJoCo Simulation */}
             <div className="mb-20">
               <div className="cyber-card overflow-hidden flex flex-col md:flex-row-reverse bg-cyber-dark/50">
+                <div className="md:w-1/2 h-64 md:h-auto bg-gradient-to-br from-cyber-green/20 via-cyber-blue/10 to-cyber-dark flex items-center justify-center relative overflow-hidden">
+                  <div className="cyber-grid absolute inset-0 opacity-20"></div>
+                  <div className="relative z-10 text-center p-8">
+                    <div className="text-6xl mb-4">🤖</div>
+                    <div className="font-mono text-cyber-green text-sm">MuJoCo + Gymnasium</div>
+                    <div className="font-mono text-gray-500 text-xs mt-1">Robot Arm Simulation</div>
+                  </div>
+                  <div className="absolute top-4 right-4 font-mono text-xs text-cyber-green">02</div>
+                </div>
+                <div className="md:w-1/2 p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold cyber-title tracking-tight">SO-ARM-101 SIMULATION</h3>
+                      <span className="text-cyber-green font-mono text-xs">VLA Policy Training</span>
+                    </div>
+                    <div className="flex space-x-2">
+                      <a href="https://github.com/adamya-singh/SO-ARM-101" className="text-gray-400 hover:text-cyber-green transition-colors border border-gray-700 hover:border-cyber-green/50 p-2 rounded-sm" aria-label="GitHub Repository">
+                        <Github size={18} />
+                      </a>
+                    </div>
+                  </div>
+                  <p className="text-gray-400 mb-6 font-mono text-sm leading-relaxed">
+                    Built a <span className="text-cyber-green">MuJoCo + Gymnasium</span> simulation environment for the SO-ARM-101 arm with multi-camera observations, normalized state/action interfaces, teleoperation, and shaped pick-and-place rewards.
+                    Implemented VLA policy inference with adapters for <span className="text-cyber-teal">SmolVLA (450M)</span> and <span className="text-cyber-teal">Pi0 (3.3B)</span>, enabling model swapping via CLI flags. Trained policies with <span className="text-cyber-green">ReinFlow using PPO-style objectives</span>.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <span className="bg-cyber-green/10 border border-cyber-green/30 rounded px-2 py-1 text-xs font-mono">MuJoCo</span>
+                    <span className="bg-cyber-green/10 border border-cyber-green/30 rounded px-2 py-1 text-xs font-mono">Gymnasium</span>
+                    <span className="bg-cyber-green/10 border border-cyber-green/30 rounded px-2 py-1 text-xs font-mono">PyTorch</span>
+                    <span className="bg-cyber-green/10 border border-cyber-green/30 rounded px-2 py-1 text-xs font-mono">Transformers</span>
+                    <span className="bg-cyber-green/10 border border-cyber-green/30 rounded px-2 py-1 text-xs font-mono">RL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Project 3 - AtomicCoach */}
+            <div className="mb-20">
+              <div className="cyber-card overflow-hidden flex flex-col md:flex-row bg-cyber-dark/50">
                 <div className="md:w-1/2 h-64 md:h-auto bg-gradient-to-br from-cyber-teal/20 via-cyber-blue/10 to-cyber-dark flex items-center justify-center relative overflow-hidden">
                   <div className="cyber-grid absolute inset-0 opacity-20"></div>
                   <div className="relative z-10 text-center p-8">
@@ -316,7 +355,7 @@ const Portfolio = () => {
                     <div className="font-mono text-cyber-teal text-sm">LLaMA 3 8B Fine-Tuned</div>
                     <div className="font-mono text-gray-500 text-xs mt-1">Behavioral AI Coach</div>
                   </div>
-                  <div className="absolute top-4 right-4 font-mono text-xs text-cyber-teal">02</div>
+                  <div className="absolute top-4 left-4 font-mono text-xs text-cyber-teal">03</div>
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex justify-between items-start mb-4">
@@ -345,7 +384,7 @@ const Portfolio = () => {
               </div>
             </div>
             
-            {/* Project 2 - LevelUp */}
+            {/* Project 4 - LevelUp */}
             <div className="mb-20">
               <div className="cyber-card overflow-hidden flex flex-col md:flex-row-reverse bg-cyber-dark/50">
                 <div className="md:w-1/2 h-64 md:h-auto bg-cyber-blue/10 flex items-center justify-center relative overflow-hidden">
@@ -356,7 +395,7 @@ const Portfolio = () => {
                     alt="LevelUp Demo" 
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute top-4 right-4 font-mono text-xs text-cyber-blue">03</div>
+                  <div className="absolute top-4 right-4 font-mono text-xs text-cyber-blue">04</div>
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex justify-between items-start mb-4">
@@ -384,7 +423,7 @@ const Portfolio = () => {
               </div>
             </div>
             
-            {/* Project 3 - AI Web Scraper */}
+            {/* Project 5 - AI Web Scraper */}
             <div>
               <div className="cyber-card overflow-hidden flex flex-col md:flex-row bg-cyber-dark/50">
                 <div className="md:w-1/2 h-64 md:h-auto bg-cyber-blue/10 flex items-center justify-center relative overflow-hidden">
@@ -392,7 +431,7 @@ const Portfolio = () => {
                   <div className="text-6xl text-cyber-blue relative z-10">
                     <Code />
                   </div>
-                  <div className="absolute top-4 left-4 font-mono text-xs text-cyber-blue">04</div>
+                  <div className="absolute top-4 left-4 font-mono text-xs text-cyber-blue">05</div>
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex justify-between items-start mb-4">
@@ -440,7 +479,7 @@ const Portfolio = () => {
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyber-blue animate-pulse"></div>
                 <div className="mb-2 cyber-card p-4 bg-cyber-dark/50">
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="text-xl font-bold cyber-title tracking-tight">SOFTWARE ENGINEERING INTERN</h3>
+                    <h3 className="text-xl font-bold cyber-title tracking-tight">MACHINE LEARNING ENGINEER INTERN</h3>
                     <span className="bg-cyber-blue/20 border border-cyber-blue/40 text-cyber-blue text-[10px] px-2 py-0.5 rounded font-mono">YC-BACKED</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
@@ -452,9 +491,9 @@ const Portfolio = () => {
                   </div>
                 </div>
                 <ul className="space-y-3 text-gray-300 list-disc list-outside ml-4 font-mono text-sm">
-                  <li>Contributing to a full-stack document-to-HTML platform (Next.js 15, TypeScript, FastAPI, Supabase) that prepares enterprise documents for long-horizon AI agents</li>
-                  <li>Extending backend services in <span className="text-cyber-teal">FastAPI</span> for document ingestion, replication, and sync/progress tracking with clean APIs between vision/LLM calls and storage</li>
-                  <li>Building advanced <span className="text-cyber-teal">TypeScript/Next.js</span> UX for multi-page document editing, placeholder/image workflows, and prompt-history/analytics views</li>
+                  <li>Working on the <span className="text-cyber-teal">Enterprise Search Benchmark</span> (10 tasks) over a Docker-baked corpus of PDFs/PowerPoints/spreadsheets, backed by PostgreSQL + pgvector semantic search</li>
+                  <li>Implemented an <span className="text-cyber-teal">MCP-based RL environment</span> exposing search/fetch/answer tools with step budgeting, citation checks, and redaction-after-view memory constraints</li>
+                  <li>Training <span className="text-cyber-green">Qwen3-14B with GRPO</span> via W&B serverless distillation from frontier-model trajectories and local on-policy RL using vLLM + LoRA with hot-reloaded adapters</li>
                 </ul>
               </div>
               
