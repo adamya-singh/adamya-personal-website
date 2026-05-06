@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-gray-400 font-mono text-sm">
-              <span className="text-cyber-blue">&copy;</span> 2025 Adamya Singh. All rights reserved.
+              <span className="text-cyber-blue">&copy;</span> 2026 Adamya Singh. All rights reserved.
             </p>
           </div>
           
@@ -39,12 +39,6 @@ const Footer = () => {
               <Mail size={20} />
             </a>
           </div>
-        </div>
-        
-        <div className="mt-4 pt-4 border-t border-cyber-blue/10">
-          <p className="text-center text-gray-500 font-mono text-xs">
-            <span className="text-cyber-blue">$</span> Built with Next.js, TypeScript, and Tailwind CSS
-          </p>
         </div>
       </div>
     </footer>

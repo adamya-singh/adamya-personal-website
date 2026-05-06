@@ -3,13 +3,15 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Code, Server, ExternalLink, Github, Terminal, Database, Cpu, Zap } from "lucide-react";
 
 const Portfolio = () => {
+  const [showMoreExperience, setShowMoreExperience] = useState(false);
+
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLAnchorElement;
@@ -54,7 +56,7 @@ const Portfolio = () => {
               ADAMYA SINGH
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-300 font-mono">
-              <span className="text-cyber-blue">&gt;</span> AI Engineer
+              <span className="text-cyber-blue">&gt;</span> Agentic Engineer
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4">
               <Button className="cyber-button" onClick={() => document.getElementById('projects')?.scrollIntoView({
@@ -82,70 +84,24 @@ const Portfolio = () => {
               <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
             </div>
             
-            <div className="flex flex-col md:flex-row gap-12">
-              {/* Left column - Text */}
-              <div className="md:w-2/3">
-                <div className="cyber-card p-6 bg-cyber-dark/50">
-                  <p className="text-lg text-gray-300 mb-6 font-mono leading-relaxed">
-                    <span className="text-cyber-blue">$</span> I&#39;m a Computer Science and Data Science student at Rutgers University with a passion for 
-                    full-stack development and artificial intelligence. I&#39;m driven by a love for problem solving and am always eager to learn new technologies.
-                  </p>
-                  
-                  <p className="text-lg text-gray-300 mb-6 font-mono leading-relaxed">
-                    <span className="text-cyber-blue">$</span> Currently, I&#39;m a <span className="text-cyber-teal">Software Engineering Intern at Aviro</span> (YC-backed), building full-stack tools for enterprise AI agents. 
-                    I&#39;m also conducting <span className="text-cyber-teal">Computer Vision research</span> at Rutgers, investigating VLM failures in negation comprehension using medical imaging datasets.
-                  </p>
-                  
-                  <p className="text-lg text-gray-300 font-mono leading-relaxed">
-                    <span className="text-cyber-blue">$</span> Previously, I was a <span className="text-cyber-teal">Fusen Fellow</span> at Fusen World, an accelerator for startups. I worked on rebootED (backed by Google Cloud for Startups), where I built an enterprise LMS from scratch. 
-                    I&#39;m also a Tech Team Lead at USACS, an Eagle Scout, and a <span className="text-cyber-green">Verizon Smart Campus Challenge 2025 Winner</span>.
-                  </p>
-                </div>
-              </div>
-              
-              {/* Right column - Skills */}
-              <div className="md:w-1/3">
-                <div className="cyber-card p-6 bg-cyber-dark/50">
-                  <div className="flex items-center space-x-2 mb-4">
-                    <Terminal className="text-cyber-blue" size={18} />
-                    <h3 className="text-xl font-bold cyber-title tracking-tight">
-                      TECH STACK
-                    </h3>
+            <div className="max-w-3xl mx-auto">
+              <div className="cyber-card p-6 md:p-8 bg-cyber-dark/50">
+                <p className="text-xl md:text-2xl text-gray-200 font-mono leading-relaxed mb-6">
+                  <span className="text-cyber-blue">&gt;</span> I build agentic systems, ML infrastructure, and polished full-stack products.
+                </p>
+
+                <div className="grid gap-3 md:grid-cols-3">
+                  <div className="border border-cyber-blue/10 bg-cyber-blue/5 p-4">
+                    <div className="text-cyber-blue font-mono text-xs mb-2">CURRENT</div>
+                    <p className="text-gray-300 font-mono text-sm leading-relaxed">ML Engineer Intern at Aviro, building RL environments for enterprise AI agents.</p>
                   </div>
-                  
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center space-x-2 p-2 border border-cyber-blue/10 bg-cyber-blue/5">
-                      <span className="text-cyber-blue">&gt;</span>
-                      <span className="font-mono text-sm">Python</span>
-                    </div>
-                    <div className="flex items-center space-x-2 p-2 border border-cyber-blue/10 bg-cyber-blue/5">
-                      <span className="text-cyber-blue">&gt;</span>
-                      <span className="font-mono text-sm">TypeScript</span>
-                    </div>
-                    <div className="flex items-center space-x-2 p-2 border border-cyber-blue/10 bg-cyber-blue/5">
-                      <span className="text-cyber-blue">&gt;</span>
-                      <span className="font-mono text-sm">Next.js</span>
-                    </div>
-                    <div className="flex items-center space-x-2 p-2 border border-cyber-blue/10 bg-cyber-blue/5">
-                      <span className="text-cyber-blue">&gt;</span>
-                      <span className="font-mono text-sm">FastAPI</span>
-                    </div>
-                    <div className="flex items-center space-x-2 p-2 border border-cyber-blue/10 bg-cyber-blue/5">
-                      <span className="text-cyber-blue">&gt;</span>
-                      <span className="font-mono text-sm">Java</span>
-                    </div>
-                    <div className="flex items-center space-x-2 p-2 border border-cyber-blue/10 bg-cyber-blue/5">
-                      <span className="text-cyber-blue">&gt;</span>
-                      <span className="font-mono text-sm">Spring Boot</span>
-                    </div>
-                    <div className="flex items-center space-x-2 p-2 border border-cyber-blue/10 bg-cyber-blue/5">
-                      <span className="text-cyber-blue">&gt;</span>
-                      <span className="font-mono text-sm">PyTorch</span>
-                    </div>
-                    <div className="flex items-center space-x-2 p-2 border border-cyber-blue/10 bg-cyber-blue/5">
-                      <span className="text-cyber-blue">&gt;</span>
-                      <span className="font-mono text-sm">PostgreSQL</span>
-                    </div>
+                  <div className="border border-cyber-teal/10 bg-cyber-teal/5 p-4">
+                    <div className="text-cyber-teal font-mono text-xs mb-2">RESEARCH</div>
+                    <p className="text-gray-300 font-mono text-sm leading-relaxed">Computer Vision research at Rutgers on VLM negation failures in medical imaging.</p>
+                  </div>
+                  <div className="border border-cyber-green/10 bg-cyber-green/5 p-4">
+                    <div className="text-cyber-green font-mono text-xs mb-2">NEXT</div>
+                    <p className="text-gray-300 font-mono text-sm leading-relaxed">Incoming data engineering intern at Moody&apos;s and CS/Data Science student at Rutgers.</p>
                   </div>
                 </div>
               </div>
@@ -165,48 +121,7 @@ const Portfolio = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Frontend Development */}
-              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300 bg-cyber-dark/50">
-                <CardContent className="pt-6">
-                  <div className="w-16 h-16 bg-cyber-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto border border-cyber-blue/30">
-                    <Code className="h-8 w-8 text-cyber-blue" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue tracking-tight">FRONTEND</h3>
-                  <p className="text-gray-400 text-center text-sm mb-4">
-                    Building responsive and interactive web applications
-                  </p>
-                  <div className="flex flex-wrap gap-1.5 justify-center">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">React</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Next.js</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">TypeScript</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">JavaScript</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">HTML/CSS</span>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              {/* Backend Development */}
-              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300 bg-cyber-dark/50">
-                <CardContent className="pt-6">
-                  <div className="w-16 h-16 bg-cyber-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto border border-cyber-blue/30">
-                    <Server className="h-8 w-8 text-cyber-blue" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue tracking-tight">BACKEND</h3>
-                  <p className="text-gray-400 text-center text-sm mb-4">
-                    Building robust server-side applications and APIs
-                  </p>
-                  <div className="flex flex-wrap gap-1.5 justify-center">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">FastAPI</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Spring Boot</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Node.js</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">PostgreSQL</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Supabase</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">MongoDB</span>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              {/* Data Science */}
+              {/* Languages */}
               <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300 bg-cyber-dark/50">
                 <CardContent className="pt-6">
                   <div className="w-16 h-16 bg-cyber-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto border border-cyber-blue/30">
@@ -216,18 +131,18 @@ const Portfolio = () => {
                   <p className="text-gray-400 text-center text-sm mb-4">
                     Core programming languages and scripting
                   </p>
-                  <div className="flex flex-wrap gap-1.5 justify-center">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Python</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Java</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">C/C++</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">SQL</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">R</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[80px]">Bash</span>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Python</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">C/C++</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Java</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">TypeScript</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">SQL</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Bash</span>
                   </div>
                 </CardContent>
               </Card>
               
-              {/* AI Research */}
+              {/* AI / ML */}
               <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300 bg-cyber-dark/50">
                 <CardContent className="pt-6">
                   <div className="w-16 h-16 bg-cyber-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto border border-cyber-blue/30">
@@ -235,15 +150,64 @@ const Portfolio = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue tracking-tight">AI / ML</h3>
                   <p className="text-gray-400 text-center text-sm mb-4">
-                    Machine learning and AI development
+                    Agentic systems, RL training, and applied ML
                   </p>
-                  <div className="flex flex-wrap gap-1.5 justify-center">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">PyTorch</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">HuggingFace</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">DSPy</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">RAG</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">NLP</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono truncate max-w-[90px]">Comp Vision</span>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">PyTorch</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Transformers</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">HuggingFace</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">vLLM</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">LoRA</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">GRPO</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">RAG</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">VLA</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">RL</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Computer Vision</span>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Infra / Backend */}
+              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300 bg-cyber-dark/50">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 bg-cyber-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto border border-cyber-blue/30">
+                    <Server className="h-8 w-8 text-cyber-blue" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue tracking-tight">INFRA / BACKEND</h3>
+                  <p className="text-gray-400 text-center text-sm mb-4">
+                    APIs, retrieval systems, and deployment foundations
+                  </p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">FastAPI</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Spring Boot</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">PostgreSQL</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">pgvector</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Docker</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">AWS S3</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Linux</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">CUDA</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">REST APIs</span>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Product */}
+              <Card className="cyber-card border-cyber-blue/20 hover:shadow-neon-blue transition-all duration-300 bg-cyber-dark/50">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 bg-cyber-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto border border-cyber-blue/30">
+                    <Code className="h-8 w-8 text-cyber-blue" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-center font-mono text-cyber-blue tracking-tight">PRODUCT</h3>
+                  <p className="text-gray-400 text-center text-sm mb-4">
+                    Full-stack interfaces and production app delivery
+                  </p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">React</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Next.js</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Tailwind CSS</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Assistant API</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">SSE</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/20 rounded px-2 py-1 text-xs text-center font-mono">Analytics</span>
                   </div>
                 </CardContent>
               </Card>
@@ -309,13 +273,14 @@ const Portfolio = () => {
             {/* Project 2 - SO-ARM-101 MuJoCo Simulation */}
             <div className="mb-20">
               <div className="cyber-card overflow-hidden flex flex-col md:flex-row-reverse bg-cyber-dark/50">
-                <div className="md:w-1/2 h-64 md:h-auto bg-gradient-to-br from-cyber-green/20 via-cyber-blue/10 to-cyber-dark flex items-center justify-center relative overflow-hidden">
+                <div className="md:w-1/2 h-64 md:h-auto bg-cyber-green/10 flex items-center justify-center relative overflow-hidden">
                   <div className="cyber-grid absolute inset-0 opacity-20"></div>
-                  <div className="relative z-10 text-center p-8">
-                    <div className="text-6xl mb-4">🤖</div>
-                    <div className="font-mono text-cyber-green text-sm">MuJoCo + Gymnasium</div>
-                    <div className="font-mono text-gray-500 text-xs mt-1">Robot Arm Simulation</div>
-                  </div>
+                  {/* TODO: Consider replacing <img> with <Image /> from next/image for better performance and optimization. */}
+                  <img
+                    src="https://raw.githubusercontent.com/adamya-singh/SO-ARM-101/master/readme-assets/hero-sim-top.gif"
+                    alt="SO-ARM-101 Simulation Top View"
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute top-4 right-4 font-mono text-xs text-cyber-green">02</div>
                 </div>
                 <div className="md:w-1/2 p-8">
@@ -422,43 +387,6 @@ const Portfolio = () => {
                 </div>
               </div>
             </div>
-            
-            {/* Project 5 - AI Web Scraper */}
-            <div>
-              <div className="cyber-card overflow-hidden flex flex-col md:flex-row bg-cyber-dark/50">
-                <div className="md:w-1/2 h-64 md:h-auto bg-cyber-blue/10 flex items-center justify-center relative overflow-hidden">
-                  <div className="cyber-grid absolute inset-0 opacity-20"></div>
-                  <div className="text-6xl text-cyber-blue relative z-10">
-                    <Code />
-                  </div>
-                  <div className="absolute top-4 left-4 font-mono text-xs text-cyber-blue">05</div>
-                </div>
-                <div className="md:w-1/2 p-8">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-2xl font-bold cyber-title tracking-tight">AI WEB SCRAPER</h3>
-                    <div className="flex space-x-2">
-                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
-                        <Github size={18} />
-                      </a>
-                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="Live Demo">
-                        <ExternalLink size={18} />
-                      </a>
-                    </div>
-                  </div>
-                  <p className="text-gray-400 mb-6 font-mono text-sm leading-relaxed">
-                    An intelligent web scraping agent for dynamic extraction and LLM-driven interpretation of user-specified web content.
-                    Built with Selenium, BeautifulSoup, and LangChain to efficiently process and analyze complex web data.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Python</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Selenium</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">BeautifulSoup</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">LangChain</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">LLM</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -491,13 +419,31 @@ const Portfolio = () => {
                   </div>
                 </div>
                 <ul className="space-y-3 text-gray-300 list-disc list-outside ml-4 font-mono text-sm">
-                  <li>Working on the <span className="text-cyber-teal">Enterprise Search Benchmark</span> (10 tasks) over a Docker-baked corpus of PDFs/PowerPoints/spreadsheets, backed by PostgreSQL + pgvector semantic search</li>
-                  <li>Implemented an <span className="text-cyber-teal">MCP-based RL environment</span> exposing search/fetch/answer tools with step budgeting, citation checks, and redaction-after-view memory constraints</li>
-                  <li>Training <span className="text-cyber-green">Qwen3-14B with GRPO</span> via W&B serverless distillation from frontier-model trajectories and local on-policy RL using vLLM + LoRA with hot-reloaded adapters</li>
+                  <li>Built a <span className="text-cyber-teal">Dockerized Enterprise Search Benchmark</span> over PDFs, PowerPoints, and spreadsheets, backed by PostgreSQL + pgvector semantic search</li>
+                  <li>Designed an <span className="text-cyber-teal">MCP-based RL environment</span> with search/fetch/answer tools, step budgeting, citation validation, and redaction-after-view memory constraints, improving model performance by <span className="text-cyber-green">26%</span></li>
+                  <li>Trained <span className="text-cyber-green">Qwen3-14B with GRPO</span> using W&B serverless distillation and local on-policy RL with vLLM + LoRA hot-reloaded adapters</li>
                 </ul>
               </div>
               
-              {/* Job 2 - rebootED */}
+              {/* Job 2 - Moody's */}
+              <div className="mb-12 border-l-2 border-cyber-blue/60 pl-8 relative">
+                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyber-blue/60"></div>
+                <div className="mb-2 cyber-card p-4 bg-cyber-dark/50">
+                  <div className="flex items-center gap-2 mb-1 flex-wrap">
+                    <h3 className="text-xl font-bold cyber-title tracking-tight">SOFTWARE ENGINEERING INTERN</h3>
+                    <span className="bg-cyber-teal/20 border border-cyber-teal/40 text-cyber-teal text-[10px] px-2 py-0.5 rounded font-mono">DATA ENGINEERING</span>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
+                    <a href="https://www.moodys.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyber-blue transition-colors">Moody&apos;s Corporation</a>
+                    <span className="hidden sm:block text-cyber-blue">•</span>
+                    <span>New York, NY</span>
+                    <span className="hidden sm:block text-cyber-blue">•</span>
+                    <span className="text-cyber-green">Jun 2026 - Aug 2026</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Job 3 - rebootED */}
               <div className="mb-12 border-l-2 border-cyber-teal pl-8 relative">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyber-teal"></div>
                 <div className="mb-2 cyber-card p-4 bg-cyber-dark/50">
@@ -526,7 +472,7 @@ const Portfolio = () => {
                 </ul>
               </div>
               
-              {/* Job 3 - Research */}
+              {/* Job 4 - Research */}
               <div className="mb-12 border-l-2 border-cyber-green pl-8 relative">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyber-green"></div>
                 <div className="mb-2 cyber-card p-4 bg-cyber-dark/50">
@@ -545,43 +491,55 @@ const Portfolio = () => {
                   <li>Benchmarked <span className="text-cyber-teal">3+ GenAI VLMs</span> (CLIP, BioMedCLIP) on negation-sensitive tasks using PyTorch; developed domain-specific evaluation tools</li>
                 </ul>
               </div>
-              
-              {/* Job 4 - Code Ninjas */}
-              <div className="mb-12 border-l-2 border-gray-600 pl-8 relative">
-                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-600"></div>
-                <div className="mb-2 cyber-card p-4 bg-cyber-dark/50">
-                  <h3 className="text-xl font-bold cyber-title tracking-tight">SENIOR CODING INSTRUCTOR</h3>
-                  <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
-                    <span>Code Ninjas</span>
-                    <span className="hidden sm:block text-cyber-blue">•</span>
-                    <span>Canton, MA</span>
-                    <span className="hidden sm:block text-cyber-blue">•</span>
-                    <span className="text-cyber-green">Jan 2022 - Jul 2024</span>
-                  </div>
-                </div>
-                {/* <ul className="space-y-3 text-gray-300 list-disc list-outside ml-4 font-mono text-sm">
-                  <li>Designed and led <span className="text-cyber-teal">3 new STEM programs</span> (AI, Web Dev, Python), reaching <span className="text-cyber-green">200+ students</span> and improving learning outcomes across age groups</li>
-                  <li>Led technical training for <span className="text-cyber-green">7 Junior Instructors</span>, boosting student project completion rates by <span className="text-cyber-green">30%</span></li>
-                </ul> */}
+              <div className="flex justify-center mb-12">
+                <Button
+                  className="cyber-button"
+                  onClick={() => setShowMoreExperience((isShowing) => !isShowing)}
+                >
+                  {showMoreExperience ? "[Show_Less]" : "[Show_More]"}
+                </Button>
               </div>
-              
-              {/* Job 5 - Empow Studios */}
-              <div className="border-l-2 border-gray-700 pl-8 relative">
-                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-700"></div>
-                <div className="mb-2 cyber-card p-4 bg-cyber-dark/50">
-                  <h3 className="text-xl font-bold cyber-title tracking-tight">STEM INSTRUCTOR</h3>
-                  <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
-                    <span>Empow Studios</span>
-                    <span className="hidden sm:block text-cyber-blue">•</span>
-                    <span>Boston, MA</span>
-                    <span className="hidden sm:block text-cyber-blue">•</span>
-                    <span className="text-cyber-green">2019 - 2022</span>
+
+              {showMoreExperience && (
+                <>
+                  {/* Job 5 - Code Ninjas */}
+                  <div className="mb-12 border-l-2 border-gray-600 pl-8 relative">
+                    <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-600"></div>
+                    <div className="mb-2 cyber-card p-4 bg-cyber-dark/50">
+                      <h3 className="text-xl font-bold cyber-title tracking-tight">SENIOR CODING INSTRUCTOR</h3>
+                      <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
+                        <span>Code Ninjas</span>
+                        <span className="hidden sm:block text-cyber-blue">•</span>
+                        <span>Canton, MA</span>
+                        <span className="hidden sm:block text-cyber-blue">•</span>
+                        <span className="text-cyber-green">Jan 2022 - Jul 2024</span>
+                      </div>
+                    </div>
+                    {/* <ul className="space-y-3 text-gray-300 list-disc list-outside ml-4 font-mono text-sm">
+                      <li>Designed and led <span className="text-cyber-teal">3 new STEM programs</span> (AI, Web Dev, Python), reaching <span className="text-cyber-green">200+ students</span> and improving learning outcomes across age groups</li>
+                      <li>Led technical training for <span className="text-cyber-green">7 Junior Instructors</span>, boosting student project completion rates by <span className="text-cyber-green">30%</span></li>
+                    </ul> */}
                   </div>
-                </div>
-                {/* <ul className="space-y-3 text-gray-300 list-disc list-outside ml-4 font-mono text-sm">
-                  <li>Planned lessons and activities to facilitate students&#39; acquisition of basic and advanced computer skills</li>
-                </ul> */}
-              </div>
+                  
+                  {/* Job 6 - Empow Studios */}
+                  <div className="border-l-2 border-gray-700 pl-8 relative">
+                    <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-700"></div>
+                    <div className="mb-2 cyber-card p-4 bg-cyber-dark/50">
+                      <h3 className="text-xl font-bold cyber-title tracking-tight">STEM INSTRUCTOR</h3>
+                      <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 gap-2 sm:gap-4 font-mono text-sm">
+                        <span>Empow Studios</span>
+                        <span className="hidden sm:block text-cyber-blue">•</span>
+                        <span>Boston, MA</span>
+                        <span className="hidden sm:block text-cyber-blue">•</span>
+                        <span className="text-cyber-green">2019 - 2022</span>
+                      </div>
+                    </div>
+                    {/* <ul className="space-y-3 text-gray-300 list-disc list-outside ml-4 font-mono text-sm">
+                      <li>Planned lessons and activities to facilitate students&#39; acquisition of basic and advanced computer skills</li>
+                    </ul> */}
+                  </div>
+                </>
+              )}
               
             </div>
           </div>
@@ -687,11 +645,6 @@ const Portfolio = () => {
                 </h2>
                 <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[50px]"></div>
               </div>
-              
-              <p className="text-lg text-gray-300 text-center mb-8 font-mono">
-                <span className="text-cyber-blue">&gt;</span> I&#39;m currently open to new opportunities and collaborations.<br />
-                <span className="text-cyber-teal">&gt;</span> Feel free to reach out for projects, questions, or just to connect.
-              </p>
               
               <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
                 <div 
