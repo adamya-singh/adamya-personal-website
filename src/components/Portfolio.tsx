@@ -226,15 +226,15 @@ const Portfolio = () => {
               <div className="h-[1px] flex-1 bg-cyber-blue/20 max-w-[80px]"></div>
             </div>
             
-            {/* Project 1 - RU-Networking */}
+            {/* Project 1 - Rutgers SOC Agent */}
             <div className="mb-20">
               <div className="cyber-card overflow-hidden flex flex-col md:flex-row bg-cyber-dark/50">
                 <div className="md:w-1/2 h-64 md:h-auto bg-cyber-blue/10 flex items-center justify-center relative overflow-hidden">
                   <div className="cyber-grid absolute inset-0 opacity-20"></div>
                   {/* TODO: Consider replacing <img> with <Image /> from next/image for better performance and optimization. */}
-                  <img 
-                    src="https://github.com/adamya-singh/ru-networking/raw/master/assets/Verizon%20Challenge%20Demo.gif" 
-                    alt="RU-Networking Demo" 
+                  <img
+                    src="https://raw.githubusercontent.com/adamya-singh/rutgers-soc-mastra-agent/master/public/soc-agent-demo.gif"
+                    alt="Rutgers SOC Agent Demo"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 left-4 font-mono text-xs text-cyber-blue">01</div>
@@ -242,29 +242,30 @@ const Portfolio = () => {
                 <div className="md:w-1/2 p-8">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold cyber-title tracking-tight">RU-NETWORKING</h3>
-                      <span className="text-cyber-green font-mono text-xs">AI Course Planning Assistant</span>
+                      <h3 className="text-2xl font-bold cyber-title tracking-tight">RUTGERS SOC AGENT</h3>
+                      <span className="text-cyber-green font-mono text-xs">AI Scheduling Co-Pilot</span>
                     </div>
                     <div className="flex space-x-2">
-                      <a href="https://github.com/adamya-singh/ru-networking" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
+                      <a href="https://github.com/adamya-singh/rutgers-soc-mastra-agent" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="GitHub Repository">
                         <Github size={18} />
                       </a>
-                      <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="Live Demo">
+                      <a href="https://rutgers-soc-agent--concise-foundry-465822-d7.us-east4.hosted.app/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyber-blue transition-colors border border-gray-700 hover:border-cyber-blue/50 p-2 rounded-sm" aria-label="Live Demo">
                         <ExternalLink size={18} />
                       </a>
                     </div>
                   </div>
                   <p className="text-gray-400 mb-6 font-mono text-sm leading-relaxed">
-                    Full-stack AI-powered course planning assistant using RAG, engineering function-calling workflows, tool orchestration, and Server-Sent Events for <span className="text-cyber-blue">real-time, production-scale chat recommendations</span>.
-                    Reverse-engineered undocumented endpoints and developed a highly parallelized Python scraper to extract a <span className="text-cyber-green">1M+ line dataset</span>.
+                    Built a production AI scheduling co-pilot for Rutgers students with a <span className="text-cyber-blue">22-tool Mastra agent</span> spanning live SOC search, conflict detection, prerequisite resolution, and chat-driven UI mutations through Cedar-OS frontend tools.
+                    Embedded a <span className="text-cyber-green">Browserbase + Stagehand remote browser</span> for credential-free Degree Navigator automation, persisting Zod-validated audit profiles to Supabase with JWT-derived ownership and RLS-hardened tables.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Next.js</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">GPT-4o</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Assistant API</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">RAG</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">PineconeDB</span>
-                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">SSE</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Next.js 15</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Mastra</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Cedar-OS</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Vertex AI</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Supabase</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Browserbase</span>
+                    <span className="bg-cyber-blue/10 border border-cyber-blue/30 rounded px-2 py-1 text-xs font-mono">Cloud Run</span>
                   </div>
                 </div>
               </div>
